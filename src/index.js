@@ -1,6 +1,7 @@
 import './style/main.styl'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import Room from './javascript/Room.js'
 
 /**
  * Sizes
@@ -27,11 +28,15 @@ window.addEventListener('mousemove', (_event) =>
  */
 const scene = new THREE.Scene()
 
+//exemple pour le js orienté objet
+const roomSetUp = new Room(scene)
+
 /**
  * Camera
  */
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
-camera.position.z = 8
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 40)
+camera.position.y = 4
+camera.position.z = 15
 scene.add(camera)
 
 /**
@@ -46,28 +51,6 @@ scene.add(directionalLight)
 
 const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 0.3)
 scene.add(hemisphereLight)
-
-/**
- * Objects
- */
-const objectsGroup = new THREE.Group()
-scene.add(objectsGroup)
-
-const material = new THREE.MeshStandardMaterial({
-    color: 0xffffff,
-})
-
-// Sphere
-const sphere = new THREE.Mesh(new THREE.SphereGeometry(1, 16, 16), material)
-sphere.position.x = 0
-objectsGroup.add(sphere)
-
-
-// Floor
-const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(20, 20, 1, 1), material)
-floor.position.y = - 3
-floor.rotation.x -= Math.PI * 0.5
-objectsGroup.add(floor)
 
 /**
  * Renderer

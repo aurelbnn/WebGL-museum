@@ -1,4 +1,4 @@
-# Webpack template
+# WebGL Museum
 
 ## Features
 - Basic files support (html, css, js, stylus, fonts, images)
