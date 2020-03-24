@@ -6,6 +6,8 @@
 
 body
 {
+    display: flex;
+    justify-content: center;
     background: black;
     overflow-x: hidden;
 }
@@ -13,8 +15,9 @@ body
 .hero
 {
     position: relative;
-    width: 50vw;
-    height: 100vh;
+    display: flex;
+    width: 40vw;
+    height: 90vh;
     overflow: hidden;
 }
 
