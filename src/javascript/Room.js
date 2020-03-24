@@ -1,12 +1,15 @@
 import * as THREE from 'three'
-import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg'
-import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg'
+import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg' //Floor texture
+import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg' // Floor normal
+import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
+import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
 
 /**
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
 
+//Floor
 const woodfloorColorTexture = textureLoader.load(woodFloorColorSource)
 woodfloorColorTexture.repeat.x = 6
 woodfloorColorTexture.repeat.y = 6
@@ -16,13 +19,22 @@ const woodfloorNormalTexture = textureLoader.load(woodFloorNormalSource)
 woodfloorNormalTexture.wrapS = THREE.RepeatWrapping
 woodfloorNormalTexture.wrapT = THREE.RepeatWrapping
 
+//Walls
+const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
+const wallpaperNormalTexture = textureLoader.load(wallpaperNormalSource)
+
 export default class Room
 {
     constructor(_scene)
     {
-        const wallsMaterial = new THREE.MeshStandardMaterial()
+        const wallsMaterial = new THREE.MeshStandardMaterial({
+            map: wallpaperColorTexture,
+            normalMap: wallpaperNormalTexture,
+            color: 0x04072C,
+        })
         const material = new THREE.MeshStandardMaterial({
-            color: 0xffffff,
+            map: woodfloorColorTexture,
+            normalMap: woodfloorNormalTexture,
         })
 
         const wallFirstMesh = new THREE.Mesh(new THREE.BoxGeometry( 12, 4, 0.125 ), wallsMaterial)
@@ -95,11 +107,7 @@ export default class Room
         wallTwelfthMesh.position.z = -5.625
         wallTwelfthMesh.rotation.y = Math.PI * -0.5
 
-        const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(30, 30, 1, 1),
-            new THREE.MeshStandardMaterial({
-                map: woodfloorColorTexture,
-                normalMap: woodfloorNormalTexture,
-            }))
+        const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(30, 30, 1, 1), material)
         floor.position.y = 0
         floor.rotation.x -= Math.PI * 0.5
         
