@@ -8,7 +8,13 @@ import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg'
 const textureLoader = new THREE.TextureLoader()
 
 const woodfloorColorTexture = textureLoader.load(woodFloorColorSource)
+woodfloorColorTexture.repeat.x = 6
+woodfloorColorTexture.repeat.y = 6
+woodfloorColorTexture.wrapS = THREE.RepeatWrapping
+woodfloorColorTexture.wrapT = THREE.RepeatWrapping
 const woodfloorNormalTexture = textureLoader.load(woodFloorNormalSource)
+woodfloorNormalTexture.wrapS = THREE.RepeatWrapping
+woodfloorNormalTexture.wrapT = THREE.RepeatWrapping
 
 export default class Room
 {
@@ -89,7 +95,11 @@ export default class Room
         wallTwelfthMesh.position.z = -5.625
         wallTwelfthMesh.rotation.y = Math.PI * -0.5
 
-        const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(30, 30, 1, 1), material)
+        const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(30, 30, 1, 1),
+            new THREE.MeshStandardMaterial({
+                map: woodfloorColorTexture,
+                normalMap: woodfloorNormalTexture,
+            }))
         floor.position.y = 0
         floor.rotation.x -= Math.PI * 0.5
         
