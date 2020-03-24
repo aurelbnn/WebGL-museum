@@ -1,8 +1,10 @@
 import * as THREE from 'three'
 import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg' //Floor texture
 import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg' // Floor normal
+import woodFloorAmbientSource from '../images/WoodFloor/WoodfloorAmbientOcculsion.jpg' // Floor Ambient occlusion
 import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
 import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
+import wallpaperAmbientSource from '../images/Wallpaper/WallpaperAmbientOcclusion.jpg' // Wall ambient occlusion
 
 /**
  * Textures
@@ -15,13 +17,19 @@ woodfloorColorTexture.repeat.x = 6
 woodfloorColorTexture.repeat.y = 6
 woodfloorColorTexture.wrapS = THREE.RepeatWrapping
 woodfloorColorTexture.wrapT = THREE.RepeatWrapping
+
 const woodfloorNormalTexture = textureLoader.load(woodFloorNormalSource)
 woodfloorNormalTexture.wrapS = THREE.RepeatWrapping
 woodfloorNormalTexture.wrapT = THREE.RepeatWrapping
 
+const woodFloorAmbientTexture = textureLoader.load(woodFloorAmbientSource)
+woodFloorAmbientTexture.wrapS = THREE.RepeatWrapping
+woodFloorAmbientTexture.wrapT = THREE.RepeatWrapping
+
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
 const wallpaperNormalTexture = textureLoader.load(wallpaperNormalSource)
+const wallpaperAmbientTexture = textureLoader.load(wallpaperAmbientSource)
 
 export default class Room
 {
@@ -30,11 +38,13 @@ export default class Room
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
             normalMap: wallpaperNormalTexture,
+            aoMap: wallpaperAmbientTexture,
             color: 0x04072C,
         })
         const material = new THREE.MeshStandardMaterial({
             map: woodfloorColorTexture,
             normalMap: woodfloorNormalTexture,
+            aoMap: woodFloorAmbientTexture,
         })
 
         const wallFirstMesh = new THREE.Mesh(new THREE.BoxGeometry( 12, 4, 0.1 ), wallsMaterial)
