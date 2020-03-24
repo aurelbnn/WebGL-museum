@@ -1,6 +1,4 @@
 import * as THREE from 'three'
-import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg' //Floor texture
-import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg' // Floor normal
 import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
 import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
 
@@ -8,16 +6,6 @@ import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // W
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
-
-//Floor
-const woodfloorColorTexture = textureLoader.load(woodFloorColorSource)
-woodfloorColorTexture.repeat.x = 6
-woodfloorColorTexture.repeat.y = 6
-woodfloorColorTexture.wrapS = THREE.RepeatWrapping
-woodfloorColorTexture.wrapT = THREE.RepeatWrapping
-const woodfloorNormalTexture = textureLoader.load(woodFloorNormalSource)
-woodfloorNormalTexture.wrapS = THREE.RepeatWrapping
-woodfloorNormalTexture.wrapT = THREE.RepeatWrapping
 
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
@@ -53,6 +41,16 @@ export default class Room
         jocondeWallPartFour.position.y = 0.5
         jocondeWallPartFour.position.z = 8
 
-        _scene.add(jocondeWallPartOne, jocondeWallPartTwo, jocondeWallPartThree, jocondeWallPartFour)
+        const jocondeFloor = new THREE.Mesh(new THREE.BoxGeometry( 5, 0.1, 2 ), wallsMaterial)
+        jocondeFloor.position.x = 2.5
+        jocondeFloor.position.y = 0.1
+        jocondeFloor.position.z = 9
+
+        const jocondeCeiling = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 2.1 ), wallsMaterial)
+        jocondeCeiling.position.x = 2.5
+        jocondeCeiling.position.y = 4
+        jocondeCeiling.position.z = 9
+        
+        _scene.add(jocondeWallPartOne, jocondeWallPartTwo, jocondeWallPartThree, jocondeWallPartFour, jocondeFloor, jocondeCeiling)
     }
 }
