@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Room from './javascript/Room.js'
 import Joconde from './javascript/Joconde.js'
+import Scream from './javascript/Scream.js'
 
 /**
  * Sizes
@@ -33,6 +34,8 @@ const scene = new THREE.Scene()
 const roomSetUp = new Room(scene)
 
 const jocondeView = new Joconde(scene)
+
+const theScreamView = new Scream(scene)
 
 /**
  * Camera

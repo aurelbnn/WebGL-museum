@@ -52,21 +52,21 @@ export default class Room
         wallFirstMesh.position.y = 2
         wallFirstMesh.position.z = -6
 
-        const wallSecondMesh = new THREE.Mesh(new THREE.BoxGeometry( 16, 4, 0.1 ), wallsMaterial)
+        const wallSecondMesh = new THREE.Mesh(new THREE.BoxGeometry( 18, 4, 0.1 ), wallsMaterial)
         wallSecondMesh.position.x = -11
         wallSecondMesh.position.y = 2
-        wallSecondMesh.position.z = 2
+        wallSecondMesh.position.z = 3
         wallSecondMesh.rotation.y = Math.PI * 0.5
 
-        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), wallsMaterial)
+        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), new THREE.MeshStandardMaterial({color: 0xffffff}))
         wallThirdMesh.position.x = -8.5
         wallThirdMesh.position.y = 2
-        wallThirdMesh.position.z = 10
+        wallThirdMesh.position.z = 12
 
-        const wallFourthMesh = new THREE.Mesh(new THREE.BoxGeometry( 2, 4, 0.1 ), wallsMaterial)
+        const wallFourthMesh = new THREE.Mesh(new THREE.BoxGeometry( 4, 4, 0.1 ), wallsMaterial)
         wallFourthMesh.position.x = -6
         wallFourthMesh.position.y = 2
-        wallFourthMesh.position.z = 9
+        wallFourthMesh.position.z = 10
         wallFourthMesh.rotation.y = Math.PI * -0.5
 
         const wallFifthMesh = new THREE.Mesh(new THREE.BoxGeometry( 6, 4, 0.1 ), wallsMaterial)
@@ -80,7 +80,7 @@ export default class Room
         wallSixthMesh.position.z = 9
         wallSixthMesh.rotation.y = Math.PI * 0.5
 
-        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), new THREE.MeshStandardMaterial('color: 0xffffff'))
+        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), new THREE.MeshStandardMaterial({color: 0xffffff}))
         wallSeventhMesh.position.x = 2.5
         wallSeventhMesh.position.y = 2
         wallSeventhMesh.position.z = 10

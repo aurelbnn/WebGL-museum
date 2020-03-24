@@ -11,7 +11,7 @@ const textureLoader = new THREE.TextureLoader()
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
 const wallpaperNormalTexture = textureLoader.load(wallpaperNormalSource)
 
-export default class Room
+export default class Joconde
 {
     constructor(_scene)
     {
