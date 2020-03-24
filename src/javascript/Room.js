@@ -1,4 +1,5 @@
 import * as THREE from 'three'
+import Joconde  from './Joconde.js'
 import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg' //Floor texture
 import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg' // Floor normal
 import woodFloorAmbientSource from '../images/WoodFloor/WoodfloorAmbientOcculsion.jpg' // Floor Ambient occlusion

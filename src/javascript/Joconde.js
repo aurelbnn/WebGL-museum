@@ -1,4 +1,6 @@
 import * as THREE from 'three'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
 import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
 
@@ -15,6 +17,20 @@ export default class Joconde
 {
     constructor(_scene)
     {
+        const dracoLoader = new DRACOLoader()
+        dracoLoader.setDecoderPath('/draco/')
+
+        const gltfLoader = new GLTFLoader()
+        gltfLoader.setDRACOLoader(dracoLoader)
+
+        gltfLoader.load(
+            '/models/framework/framework.gltf',
+            (_gltf) =>
+            {
+                // ICI LES PROPRIÉTÉS QUE TU VEUX METTRE SUR LE FRAMEWORK
+            }
+        )
+
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
             normalMap: wallpaperNormalTexture,
