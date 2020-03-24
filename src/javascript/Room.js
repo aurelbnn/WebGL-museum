@@ -80,7 +80,11 @@ export default class Room
         wallSixthMesh.position.z = 9
         wallSixthMesh.rotation.y = Math.PI * 0.5
 
+<<<<<<< HEAD
         const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), new THREE.MeshStandardMaterial({color: 0xffffff}))
+=======
+        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), new THREE.MeshStandardMaterial({color: 0xffffff}))
+>>>>>>> f18001d3545fb563e551e79f6475580a22d57b80
         wallSeventhMesh.position.x = 2.5
         wallSeventhMesh.position.y = 2
         wallSeventhMesh.position.z = 10
