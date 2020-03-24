@@ -1,16 +1,18 @@
 import * as THREE from 'three'
-import Joconde  from './Joconde.js'
 import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg' //Floor texture
 import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg' // Floor normal
 import woodFloorAmbientSource from '../images/WoodFloor/WoodfloorAmbientOcculsion.jpg' // Floor Ambient occlusion
 import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
 import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
 import wallpaperAmbientSource from '../images/Wallpaper/WallpaperAmbientOcclusion.jpg' // Wall ambient occlusion
+import font from 'three/examples/fonts/helvetiker_bold.typeface.json'
+import { Scene } from 'three'
 
 /**
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
+
 
 //Floor
 const woodfloorColorTexture = textureLoader.load(woodFloorColorSource)
@@ -36,6 +38,26 @@ export default class Room
 {
     constructor(_scene)
     {
+        const textGeometry = new THREE.TextGeometry(
+            'M.I.I',
+            {
+                font: new THREE.Font(font),
+                size: 1.7,
+                height: 0.5,
+                curveSegments: 12,
+                bevelEnabled: true,
+                bevelThickness: 0.08,
+                bevelSize: 0.1,
+                bevelOffset: - 0.08,
+                bevelSegments: 10
+            }
+        )
+        const text = new THREE.Mesh(textGeometry, new THREE.MeshNormalMaterial())
+        text.position.x = 7
+        text.position.y = 0
+        text.position.z = 2
+        text.rotation.y = Math.PI * 0.6
+
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
             normalMap: wallpaperNormalTexture,
@@ -81,7 +103,7 @@ export default class Room
         wallSixthMesh.position.z = 9
         wallSixthMesh.rotation.y = Math.PI * 0.5
 
-        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), new THREE.MeshStandardMaterial({color: 0x000000}))
+        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), wallsMaterial)
         wallSeventhMesh.position.x = 2.5
         wallSeventhMesh.position.y = 2
         wallSeventhMesh.position.z = 10
@@ -126,6 +148,6 @@ export default class Room
         vitruveBase.position.z = -0.5
         vitruveBase.rotation.y = Math.PI * -0.5
 
-        _scene.add(wallFirstMesh, wallSecondMesh, wallThirdMesh, wallFourthMesh, wallFifthMesh, wallSixthMesh, wallSeventhMesh, wallEighthMesh, wallNinthMesh, wallTenthMesh, wallEleventhMesh, wallTwelfthMesh, floor, vitruveBase)
+        _scene.add(wallFirstMesh, wallSecondMesh, wallThirdMesh, wallFourthMesh, wallFifthMesh, wallSixthMesh, wallSeventhMesh, wallEighthMesh, wallNinthMesh, wallTenthMesh, wallEleventhMesh, wallTwelfthMesh, floor, vitruveBase, text)
     }
 }
