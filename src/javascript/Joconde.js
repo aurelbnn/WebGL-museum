@@ -27,6 +27,20 @@ const wallpaperNormalTexture = textureLoader.load(wallpaperNormalSource)
 
 export default class Room {
     constructor(_scene) {
+        const dracoLoader = new DRACOLoader()
+        dracoLoader.setDecoderPath('/draco/')
+
+        const gltfLoader = new GLTFLoader()
+        gltfLoader.setDRACOLoader(dracoLoader)
+
+        gltfLoader.load(
+            '/models/framework/framework.gltf',
+            (_gltf) =>
+            {
+                // ICI LES PROPRIÉTÉS QUE TU VEUX METTRE SUR LE FRAMEWORK
+            }
+        )
+
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
             normalMap: wallpaperNormalTexture,
