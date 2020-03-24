@@ -2,6 +2,7 @@ import './style/main.styl'
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Room from './javascript/Room.js'
+import Joconde from './javascript/Joconde.js'
 
 /**
  * Sizes
@@ -28,8 +29,10 @@ window.addEventListener('mousemove', (_event) =>
  */
 const scene = new THREE.Scene()
 
-//exemple pour le js orienté objet
+//Import of all Objects
 const roomSetUp = new Room(scene)
+
+const jocondeView = new Joconde(scene)
 
 /**
  * Camera

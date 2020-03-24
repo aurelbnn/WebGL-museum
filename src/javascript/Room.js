@@ -1,14 +1,40 @@
 import * as THREE from 'three'
+import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg' //Floor texture
+import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg' // Floor normal
+import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
+import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
+
+/**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader()
+
+//Floor
+const woodfloorColorTexture = textureLoader.load(woodFloorColorSource)
+woodfloorColorTexture.repeat.x = 6
+woodfloorColorTexture.repeat.y = 6
+woodfloorColorTexture.wrapS = THREE.RepeatWrapping
+woodfloorColorTexture.wrapT = THREE.RepeatWrapping
+const woodfloorNormalTexture = textureLoader.load(woodFloorNormalSource)
+woodfloorNormalTexture.wrapS = THREE.RepeatWrapping
+woodfloorNormalTexture.wrapT = THREE.RepeatWrapping
+
+//Walls
+const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
+const wallpaperNormalTexture = textureLoader.load(wallpaperNormalSource)
 
 export default class Room
 {
     constructor(_scene)
     {
         const wallsMaterial = new THREE.MeshStandardMaterial({
+            map: wallpaperColorTexture,
+            normalMap: wallpaperNormalTexture,
             color: 0x04072C,
         })
         const material = new THREE.MeshStandardMaterial({
-            color: 0xffffff,
+            map: woodfloorColorTexture,
+            normalMap: woodfloorNormalTexture,
         })
 
         const wallFirstMesh = new THREE.Mesh(new THREE.BoxGeometry( 12, 4, 0.1 ), wallsMaterial)
@@ -26,7 +52,6 @@ export default class Room
         wallThirdMesh.position.x = -8.5
         wallThirdMesh.position.y = 2
         wallThirdMesh.position.z = 10
-        wallThirdMesh.rotation.y = Math.PI
 
         const wallFourthMesh = new THREE.Mesh(new THREE.BoxGeometry( 2, 4, 0.1 ), wallsMaterial)
         wallFourthMesh.position.x = -6
@@ -38,7 +63,6 @@ export default class Room
         wallFifthMesh.position.x = -3
         wallFifthMesh.position.y = 2
         wallFifthMesh.position.z = 8
-        wallFifthMesh.rotation.y = Math.PI
 
         const wallSixthMesh = new THREE.Mesh(new THREE.BoxGeometry( 2, 4, 0.1 ), wallsMaterial)
         wallSixthMesh.position.x = 0
@@ -46,11 +70,10 @@ export default class Room
         wallSixthMesh.position.z = 9
         wallSixthMesh.rotation.y = Math.PI * 0.5
 
-        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), wallsMaterial)
+        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), new THREE.MeshStandardMaterial('color: 0xffffff'))
         wallSeventhMesh.position.x = 2.5
         wallSeventhMesh.position.y = 2
         wallSeventhMesh.position.z = 10
-        wallSeventhMesh.rotation.y = Math.PI
 
         const wallEighthMesh = new THREE.Mesh(new THREE.BoxGeometry( 13, 4, 0.1 ), wallsMaterial)
         wallEighthMesh.position.x = 5
@@ -84,6 +107,7 @@ export default class Room
         const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(30, 30, 1, 1), material)
         floor.position.y = 0
         floor.rotation.x -= Math.PI * 0.5
+        
 
         const vitruveBase = new THREE.Mesh(new THREE.BoxGeometry( 3, 1, 3 ), wallsMaterial)
         vitruveBase.position.x = 2.5
