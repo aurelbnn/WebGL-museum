@@ -45,12 +45,12 @@ scene.add(camera)
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
 scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight(0x00fffc, 0.3)
-directionalLight.position.x = 7
+const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9)
+directionalLight.position.x = -2
+directionalLight.position.y = 4
+directionalLight.position.z = -3
 scene.add(directionalLight)
 
-const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 0.3)
-scene.add(hemisphereLight)
 
 /**
  * Renderer
