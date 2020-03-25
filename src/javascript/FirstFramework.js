@@ -45,6 +45,10 @@ export default class FirstFramework {
             }
         )
 
+        /**
+         * Box
+        */
+
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
             normalMap: wallpaperNormalTexture,
@@ -140,6 +144,5 @@ export default class FirstFramework {
         jocondeThirdImage.rotation.x = Math.PI
         jocondeThirdImage.rotation.z = Math.PI
         firstFrameworkGroup.add(jocondeThirdImage)
-
         }
 }

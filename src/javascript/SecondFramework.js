@@ -30,6 +30,10 @@ export default class SecondFramework
             color: 0x04072C,
         })
 
+        /**
+         * Box
+        */
+
         const secondFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), wallsMaterial)
         secondFrameworkWallPartOneMesh.position.x = -10.375
         secondFrameworkWallPartOneMesh.position.y = 2
@@ -82,12 +86,16 @@ export default class SecondFramework
                 transparent: true,
             })
         )        
-        enferSecondPlan.position.x = -8.7
+        enferSecondPlan.position.x = -8.5
         enferSecondPlan.position.y = 1.5
-        enferSecondPlan.position.z = 9
+        enferSecondPlan.position.z = 8
         enferSecondPlan.rotation.x = Math.PI
         enferSecondPlan.rotation.z = Math.PI
         secondFrameworkGroup.add(enferSecondPlan)
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> aafc0c441f0c81f9a3a56a470591a2b19b8b80ca
     }
 }
