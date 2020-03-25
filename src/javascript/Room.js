@@ -93,11 +93,7 @@ export default class Room
         wallSecondMesh.rotation.y = Math.PI * 0.5
         roomGroup.add(wallSecondMesh)
 
-<<<<<<< HEAD
-        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), wallsMaterial)
-=======
         const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), new THREE.MeshStandardMaterial({color: 0x000000}))
->>>>>>> aafc0c441f0c81f9a3a56a470591a2b19b8b80ca
         wallThirdMesh.position.x = -8.5
         wallThirdMesh.position.y = 2
         wallThirdMesh.position.z = 12

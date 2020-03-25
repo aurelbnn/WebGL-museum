@@ -93,9 +93,5 @@ export default class SecondFramework
         enferSecondPlan.rotation.z = Math.PI
         secondFrameworkGroup.add(enferSecondPlan)
 
-<<<<<<< HEAD
-=======
-
->>>>>>> aafc0c441f0c81f9a3a56a470591a2b19b8b80ca
     }
 }
