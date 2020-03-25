@@ -48,11 +48,35 @@ const klimtFrameworkZone = new KlimtFramework(scene)
 /**
  * Camera
  */
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+ 
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 40)
 camera.position.x = 11
 camera.position.y = 8
 camera.position.z = -8
 scene.add(camera)
+
+/**
+ * Audio
+ */
+
+ // create an AudioListener and add it to the camera
+const listener = new THREE.AudioListener();
+camera.add( listener );
+
+// create the PositionalAudio object (passing in the listener)
+const sound = new THREE.PositionalAudio( listener );
+
+// load a sound and set it as the PositionalAudio object's buffer
+const audioLoader = new THREE.AudioLoader();
+audioLoader.load( 'sounds/song.ogg', function( buffer ) {
+	sound.setBuffer( buffer );
+	sound.setRefDistance( 20 );
+	sound.play();
+});
+
+// finally add the sound to the mesh
+firstFrameworkGroup.add( sound );
+
 
 /**
  * Lights
