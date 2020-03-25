@@ -1,11 +1,16 @@
 import * as THREE from 'three'
 import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
 import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
+import enferNormalSource from '../images/enfer/enferPlan.jpg'// Chaudron
+import enferAlphaSource from '../images/enfer/enferAlpha.jpg' // Chaudron Alpha
 
 /**
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
+
+const enferNormalTexture = textureLoader.load(enferNormalSource)
+const enferAlphaTexture = textureLoader.load(enferAlphaSource)
 
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
@@ -56,10 +61,47 @@ export default class SecondFramework
         secondFrameworkGroup.add(secondFrameworkFloorMesh)
 
         const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), wallsMaterial)
-        secondFrameworkCeilingMesh.position.x = -8.5
+        secondFrameworkCeilingMesh.position.x = -8.7
         secondFrameworkCeilingMesh.position.y = 4
         secondFrameworkCeilingMesh.position.z = 10
         secondFrameworkGroup.add(secondFrameworkCeilingMesh)
-        
+
+        /**
+         * Images et plan Enfer 
+         */
+
+         //FIRST : flammes
+
+
+         //SECOND
+        const enferSecondPlan = new THREE.Mesh(
+            new THREE.PlaneGeometry(3, 3, 1, 1),
+            new THREE.MeshBasicMaterial({ 
+                map: enferNormalTexture,
+                alphaMap: enferAlphaTexture,
+                transparent: true,
+            })
+        )        
+        enferSecondPlan.position.x = -8.7
+        enferSecondPlan.position.y = 1.5
+        enferSecondPlan.position.z = 9
+        enferSecondPlan.rotation.x = Math.PI
+        enferSecondPlan.rotation.z = Math.PI
+        secondFrameworkGroup.add(enferSecondPlan)
+
+        //THIRD
+        const enferThirdPlan = new THREE.Mesh(
+            new THREE.PlaneGeometry(4, 4, 1, 1),
+            new THREE.MeshBasicMaterial({ 
+                color : 0x000000,
+            })
+        )        
+        enferThirdPlan.position.x = -8.7
+        enferThirdPlan.position.y = 1.5
+        enferThirdPlan.position.z = 9
+        enferThirdPlan.rotation.x = Math.PI
+        enferThirdPlan.rotation.z = Math.PI
+        secondFrameworkGroup.add(enferThirdPlan)
+
     }
 }
