@@ -4,6 +4,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Room from './javascript/Room.js'
 import FirstFramework from './javascript/FirstFramework.js'
 import SecondFramework from './javascript/SecondFramework.js'
+import KlimtFramework from './javascript/klimtFramework.js'
+
 
 /**
  * Sizes
@@ -36,6 +38,9 @@ const roomSetUp = new Room(scene)
 const firstFrameworkZone = new FirstFramework(scene)
 
 const secondFrameworkZone = new SecondFramework(scene)
+
+const klimtFrameworkZone = new KlimtFramework(scene)
+
 
 /**
  * Camera

@@ -45,6 +45,10 @@ export default class FirstFramework {
             }
         )
 
+        /**
+         * Box
+        */
+
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
             normalMap: wallpaperNormalTexture,

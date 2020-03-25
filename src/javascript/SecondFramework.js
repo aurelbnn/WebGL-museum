@@ -30,6 +30,10 @@ export default class SecondFramework
             color: 0x04072C,
         })
 
+        /**
+         * Box
+        */
+
         const secondFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), wallsMaterial)
         secondFrameworkWallPartOneMesh.position.x = -10.375
         secondFrameworkWallPartOneMesh.position.y = 2
