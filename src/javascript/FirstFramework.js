@@ -144,6 +144,5 @@ export default class FirstFramework {
         jocondeThirdImage.rotation.x = Math.PI
         jocondeThirdImage.rotation.z = Math.PI
         firstFrameworkGroup.add(jocondeThirdImage)
-
         }
 }
