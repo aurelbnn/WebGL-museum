@@ -14,7 +14,7 @@ export default class Fire
         const particlesGeometry = new THREE.Geometry()
 
         const particlesMaterial = new THREE.PointsMaterial({
-            size: 0.03,
+            size: 0.02,
             sizeAttenuation: true,
             alphaMap: particleTexture,
             color: new THREE.Color(0xffd700),
@@ -28,24 +28,20 @@ export default class Fire
             const vertice = new THREE.Vector3(
                 (Math.random() - 0.5) * 3,
                 (Math.random() - 0.5) * 3,
-                (Math.random() - 0.5),
+                (Math.random() - 0.8),
             )
             particlesGeometry.vertices.push(vertice)
         }
         const particles = new THREE.Points(particlesGeometry, particlesMaterial)
         fireGroup.add(particles)
         particles.position.x = -10.5
-        particles.position.y = 2.25
+        particles.position.y = 2
         particles.position.z = 1
         particles.rotation.y = Math.PI * 0.5
 
         const loop = () =>
         {
             window.requestAnimationFrame(loop)
-
-            // Update objects
-            //particles.rotation.x = Math.random() * Math.PI 
-            //particles.rotation.y = Math.random() * Math.PI 
 
         }
 
