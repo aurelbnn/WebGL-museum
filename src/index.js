@@ -4,6 +4,8 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Room from './javascript/Room.js'
 import FirstFramework from './javascript/FirstFramework.js'
 import SecondFramework from './javascript/SecondFramework.js'
+import Fire from './javascript/Fire.js'
+
 
 /**
  * Sizes
@@ -37,12 +39,15 @@ const firstFrameworkZone = new FirstFramework(scene)
 
 const secondFrameworkZone = new SecondFramework(scene)
 
+const fireEffect = new Fire(scene)
+
 /**
  * Camera
  */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 40)
-camera.position.y = 4
-camera.position.z = 15
+camera.position.x = 11
+camera.position.y = 8
+camera.position.z = -8
 scene.add(camera)
 
 /**

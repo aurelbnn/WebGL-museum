@@ -89,19 +89,5 @@ export default class SecondFramework
         enferSecondPlan.rotation.z = Math.PI
         secondFrameworkGroup.add(enferSecondPlan)
 
-        //THIRD
-        const enferThirdPlan = new THREE.Mesh(
-            new THREE.PlaneGeometry(4, 4, 1, 1),
-            new THREE.MeshBasicMaterial({ 
-                color : 0x000000,
-            })
-        )        
-        enferThirdPlan.position.x = -8.7
-        enferThirdPlan.position.y = 1.5
-        enferThirdPlan.position.z = 9
-        enferThirdPlan.rotation.x = Math.PI
-        enferThirdPlan.rotation.z = Math.PI
-        secondFrameworkGroup.add(enferThirdPlan)
-
     }
 }

@@ -73,7 +73,7 @@ export default class Room
          * Walls creation for the room / floor and base for vitruvian man
          */
 
-        const museumText = new THREE.Mesh(textGeometry, new THREE.MeshNormalMaterial())
+        const museumText = new THREE.Mesh(textGeometry, wallsMaterial)
         museumText.position.x = 7
         museumText.position.y = 0
         museumText.position.z = 2
@@ -93,7 +93,7 @@ export default class Room
         wallSecondMesh.rotation.y = Math.PI * 0.5
         roomGroup.add(wallSecondMesh)
 
-        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), new THREE.MeshStandardMaterial({color: 0xffffff}))
+        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), wallsMaterial)
         wallThirdMesh.position.x = -8.5
         wallThirdMesh.position.y = 2
         wallThirdMesh.position.z = 12
