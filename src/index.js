@@ -10,6 +10,12 @@ import Fire from './javascript/Fire.js'
 import KlimtFramework from './javascript/klimtFramework.js'
 import JocondeSoundSource from './audios/huming-sound.mp3'
 import EnferSoundSource from './audios/fire.mp3'
+import KlimtSoundSource from './audios/debussy.mp3'
+import VitruveSoundSource from './audios/marchetto-cara.mp3'
+import wallpaperColorSource from './images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
+import wallpaperNormalSource from './images/Wallpaper/WallpaperNormal.jpg' // Wall normal
+import wallpaperAmbientSource from './images/Wallpaper/WallpaperAmbientOcclusion.jpg' // Wall ambient occlusion
+
 
 
 /**
@@ -112,7 +118,7 @@ JocondeSoundGroup.add(JocondeFrameRightMesh)
 
 JocondeSoundGroup.add(JocondeSound)
 
-// ENFER
+// ENFER FRAME
 const EnferSoundGroup = new THREE.Group()
     EnferSoundGroup.visible = true
     scene.add(EnferSoundGroup)
@@ -158,6 +164,92 @@ EnferSoundGroup.add(EnferFrameRightMesh)
 
 EnferSoundGroup.position.x = -11
 EnferSoundGroup.add(EnferSound)
+
+// KLIMT FRAME
+const KlimtSoundGroup = new THREE.Group()
+    KlimtSoundGroup.visible = true
+    scene.add(KlimtSoundGroup)
+const KlimtSound = new THREE.PositionalAudio(listener)
+
+audioLoader.load(KlimtSoundSource, function (buffer) {
+    KlimtSound.setBuffer(buffer)
+    KlimtSound.setRefDistance(2)
+    KlimtSound.play()
+})
+
+const KlimtFrameTop = new THREE.BoxGeometry(3, 0.1, 0.1, 0.1)
+const KlimtFrameTopMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
+const KlimtFrameTopMesh = new THREE.Mesh(KlimtFrameTop, KlimtFrameTopMaterial)
+KlimtFrameTopMesh.position.x = 2.5
+KlimtFrameTopMesh.position.y = 4
+KlimtFrameTopMesh.position.z = 7.9 
+KlimtSoundGroup.add(KlimtFrameTopMesh)
+
+const KlimtFrameBottom = new THREE.BoxGeometry(3, 0.1, 0.1, 0.1)
+const KlimtFrameBottomMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
+const KlimtFrameBottomMesh = new THREE.Mesh(KlimtFrameBottom, KlimtFrameBottomMaterial)
+KlimtFrameBottomMesh.position.x = 2.5
+KlimtFrameBottomMesh.position.y = 1
+KlimtFrameBottomMesh.position.z = 7.9 
+KlimtSoundGroup.add(KlimtFrameBottomMesh)
+
+const KlimtFrameLeft = new THREE.BoxGeometry(0.1, 3, 0.1, 0.1)
+const KlimtFrameLeftMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
+const KlimtFrameLeftMesh = new THREE.Mesh(KlimtFrameLeft, KlimtFrameLeftMaterial)
+KlimtFrameLeftMesh.position.x = 4
+KlimtFrameLeftMesh.position.y = 2.5
+KlimtFrameLeftMesh.position.z = 7.9 
+KlimtSoundGroup.add(KlimtFrameLeftMesh)
+
+const KlimtFrameRight = new THREE.BoxGeometry(0.1, 3, 0.1, 0.1)
+const KlimtFrameRightMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
+const KlimtFrameRightMesh = new THREE.Mesh(KlimtFrameRight, KlimtFrameRightMaterial)
+KlimtFrameRightMesh.position.x = 1
+KlimtFrameRightMesh.position.y = 2.5
+KlimtFrameRightMesh.position.z = 7.9 
+KlimtSoundGroup.add(KlimtFrameRightMesh)
+
+KlimtSoundGroup.position.x = -18.8
+KlimtSoundGroup.position.y = -0.5
+KlimtSoundGroup.position.z = 3.5
+KlimtSoundGroup.rotation.x = Math.PI 
+KlimtSoundGroup.rotation.z = Math.PI
+KlimtSoundGroup.rotation.y = Math.PI / 2
+
+KlimtSoundGroup.add(KlimtSound)
+
+//VITRUVE BASE
+
+//Walls
+const textureLoader = new THREE.TextureLoader()
+
+const wallsMaterial = new THREE.MeshStandardMaterial({
+    map: wallpaperColorTexture,
+    normalMap: wallpaperNormalTexture,
+    aoMap: wallpaperAmbientTexture,
+    color: 0x04072C,
+})
+
+const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
+const wallpaperNormalTexture = textureLoader.load(wallpaperNormalSource)
+const wallpaperAmbientTexture = textureLoader.load(wallpaperAmbientSource)
+
+const VitruveSound = new THREE.PositionalAudio(listener)
+
+audioLoader.load(VitruveSoundSource, function (buffer) {
+    VitruveSound.setBuffer(buffer)
+    VitruveSound.setRefDistance(2)
+    VitruveSound.play()
+})
+
+const vitruveBase = new THREE.Mesh(new THREE.BoxGeometry( 3, 1, 3 ), wallsMaterial)
+vitruveBase.position.x = 2.5
+vitruveBase.position.y = 0
+vitruveBase.position.z = -0.5
+vitruveBase.rotation.y = Math.PI * -0.5
+scene.add(vitruveBase)
+
+vitruveBase.add(VitruveSound)
 
 
 /**
