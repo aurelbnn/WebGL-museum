@@ -25,8 +25,12 @@ const jocondeSecondAlphaTexture = textureLoader.load(jocondeSecondAlphaSource)
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
 const wallpaperNormalTexture = textureLoader.load(wallpaperNormalSource)
 
-export default class Room {
+export default class FirstFramework {
     constructor(_scene) {
+        const firstFrameworkGroup = new THREE.Group()
+        firstFrameworkGroup.visible = true
+        _scene.add(firstFrameworkGroup)
+
         const dracoLoader = new DRACOLoader()
         dracoLoader.setDecoderPath('/draco/')
 
@@ -47,40 +51,49 @@ export default class Room {
             color: 0x04072C,
         })
 
-        const jocondeWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
-        jocondeWallPartOneMesh.position.x = 4.375
-        jocondeWallPartOneMesh.position.y = 2
-        jocondeWallPartOneMesh.position.z = 8
+        const firstFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
+        firstFrameworkWallPartOneMesh.position.x = 4.375
+        firstFrameworkWallPartOneMesh.position.y = 2
+        firstFrameworkWallPartOneMesh.position.z = 8
+        firstFrameworkGroup.add(firstFrameworkWallPartOneMesh)
 
-        const jocondeWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
-        jocondeWallPartTwoMesh.position.x = 0.625
-        jocondeWallPartTwoMesh.position.y = 2
-        jocondeWallPartTwoMesh.position.z = 8
+        const firstFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
+        firstFrameworkWallPartTwoMesh.position.x = 0.625
+        firstFrameworkWallPartTwoMesh.position.y = 2
+        firstFrameworkWallPartTwoMesh.position.z = 8
+        firstFrameworkGroup.add(firstFrameworkWallPartTwoMesh)
 
-        const jocondeWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
-        jocondeWallPartThreeMesh.position.x = 2.5
-        jocondeWallPartThreeMesh.position.y = 3.5
-        jocondeWallPartThreeMesh.position.z = 8
+        const firstFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
+        firstFrameworkWallPartThreeMesh.position.x = 2.5
+        firstFrameworkWallPartThreeMesh.position.y = 3.5
+        firstFrameworkWallPartThreeMesh.position.z = 8
+        firstFrameworkGroup.add(firstFrameworkWallPartThreeMesh)
 
 
-        const jocondeWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
-        jocondeWallPartFourMesh.position.x = 2.5
-        jocondeWallPartFourMesh.position.y = 0.5
-        jocondeWallPartFourMesh.position.z = 8
+        const firstFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
+        firstFrameworkWallPartFourMesh.position.x = 2.5
+        firstFrameworkWallPartFourMesh.position.y = 0.5
+        firstFrameworkWallPartFourMesh.position.z = 8
+        firstFrameworkGroup.add(firstFrameworkWallPartFourMesh)
 
-        const jocondeFloorMesh = new THREE.Mesh(new THREE.BoxGeometry(5, 0.1, 2), wallsMaterial)
-        jocondeFloorMesh.position.x = 2.5
-        jocondeFloorMesh.position.y = 0.1
-        jocondeFloorMesh.position.z = 9
+        const firstFrameworkFloorMesh = new THREE.Mesh(new THREE.BoxGeometry(5, 0.1, 2), wallsMaterial)
+        firstFrameworkFloorMesh.position.x = 2.5
+        firstFrameworkFloorMesh.position.y = 0.1
+        firstFrameworkFloorMesh.position.z = 9
+        firstFrameworkGroup.add(firstFrameworkFloorMesh)
 
-        const jocondeCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2.1), wallsMaterial)
-        jocondeCeilingMesh.position.x = 2.5
-        jocondeCeilingMesh.position.y = 4
-        jocondeCeilingMesh.position.z = 9
+        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2.1), wallsMaterial)
+        firstFrameworkCeilingMesh.position.x = 2.5
+        firstFrameworkCeilingMesh.position.y = 4
+        firstFrameworkCeilingMesh.position.z = 9
+        firstFrameworkGroup.add(firstFrameworkCeilingMesh)
 
         /**
          * Images Joconde
          */
+        const jocondeGroup = new THREE.Group()
+        jocondeGroup.visible = true
+        _scene.add(jocondeGroup)
 
         //FIRST       
         const jocondeFirstImage = new THREE.Mesh(
@@ -96,6 +109,7 @@ export default class Room {
         jocondeFirstImage.position.z = 8.5
         jocondeFirstImage.rotation.x = Math.PI
         jocondeFirstImage.rotation.z = Math.PI
+        firstFrameworkGroup.add(jocondeFirstImage)
 
         //SECOND
         const jocondeSecondImage = new THREE.Mesh(
@@ -111,6 +125,7 @@ export default class Room {
         jocondeSecondImage.position.z = 9
         jocondeSecondImage.rotation.x = Math.PI
         jocondeSecondImage.rotation.z = Math.PI
+        firstFrameworkGroup.add(jocondeSecondImage)
 
         //THIRD
         const jocondeThirdImage = new THREE.Mesh(
@@ -124,9 +139,7 @@ export default class Room {
         jocondeThirdImage.position.z = 9.5
         jocondeThirdImage.rotation.x = Math.PI
         jocondeThirdImage.rotation.z = Math.PI
+        firstFrameworkGroup.add(jocondeThirdImage)
 
-        _scene.add(jocondeFirstImage, jocondeSecondImage, jocondeThirdImage);
-    
-        _scene.add(jocondeWallPartOneMesh, jocondeWallPartTwoMesh, jocondeWallPartThreeMesh, jocondeWallPartFourMesh, jocondeFloorMesh, jocondeCeilingMesh)
-    }
+        }
 }
