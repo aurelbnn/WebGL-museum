@@ -257,23 +257,27 @@ vitruveBase.add(VitruveSound)
 /**
  * Lights
  */
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
-scene.add(ambientLight)
 
-const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9)
-directionalLight.position.x = -5
-directionalLight.position.y = 4
-directionalLight.position.z = -3
-scene.add(directionalLight)
+const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 0.5)
+scene.add(hemisphereLight)
 
-// white spotlight shining from the side, casting a shadow
+// const ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
+// scene.add(ambientLight)
 
-const spotLight = new THREE.SpotLight( 0xffffff )
-spotLight.position.set( 1, 9, -8 )
+// const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9)
+// directionalLight.position.x = -5
+// directionalLight.position.y = 4
+// directionalLight.position.z = -3
+// scene.add(directionalLight)
 
-spotLight.castShadow = true
+// // white spotlight shining from the side, casting a shadow
 
-scene.add( spotLight)
+// const spotLight = new THREE.SpotLight( 0xffffff )
+// spotLight.position.set( 1, 9, -8 )
+
+// spotLight.castShadow = true
+
+// scene.add( spotLight)
 
 
 /**

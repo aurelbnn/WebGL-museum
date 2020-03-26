@@ -136,6 +136,25 @@ export default class FirstFramework {
         jocondeThirdImage.rotation.z = Math.PI
         firstFrameworkGroup.add(jocondeThirdImage)
 
+        /**
+         * Caption
+         */
+        
+
+         /**
+          * Lights
+          */
+
+        const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.5)
+        spotLight.position.x = 2.5
+        spotLight.position.y = 4
+        spotLight.position.z = 8
+        firstFrameworkGroup.add(spotLight)
+
+        spotLight.target.position.x = 2.5
+        spotLight.target.position.y = 1.5
+        spotLight.target.position.z = 8.5
+        firstFrameworkGroup.add(spotLight.target)
 
         }
 }

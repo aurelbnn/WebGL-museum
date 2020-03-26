@@ -119,5 +119,18 @@ export default class SecondFramework
         enferSecondPlan.rotation.z = Math.PI
         secondFrameworkGroup.add(enferSecondPlan)
 
+        /**
+         * Lights
+         */
+        const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.5)
+        spotLight.position.x = -8.5
+        spotLight.position.y = 4
+        spotLight.position.z = 8
+        secondFrameworkGroup.add(spotLight)
+
+        spotLight.target.position.x = -8.5
+        spotLight.target.position.y = 2.5
+        spotLight.target.position.z = 8.5
+        secondFrameworkGroup.add(spotLight.target)
     }
 }

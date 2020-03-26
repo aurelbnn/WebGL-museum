@@ -6,6 +6,8 @@ export default class VitruvianMan{
     constructor(_scene)
     {
         const vitruvianManGroup = new THREE.Group()
+        vitruvianManGroup.visible = true
+        _scene.add(vitruvianManGroup)
 
         const dracoLoader = new DRACOLoader()
         dracoLoader.setDecoderPath('/draco/')
@@ -26,5 +28,22 @@ export default class VitruvianMan{
                 }
             }
         )
+
+        /**
+         * Lights
+         */      
+        
+        const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.5)
+        spotLight.position.x = 2.5
+        spotLight.position.y = 4.5
+        spotLight.position.z = -0.5
+        vitruvianManGroup.add(spotLight)
+
+        spotLight.target.position.x = 2.5
+        spotLight.target.position.y = 0
+        spotLight.target.position.z = -0.5
+        vitruvianManGroup.add(spotLight.target)
+
+        
     }
 }

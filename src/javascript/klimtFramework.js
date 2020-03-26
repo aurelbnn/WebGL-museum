@@ -38,5 +38,21 @@ export default class KlimtFramework
 
 
         klimtFrameworkGroup.add(klimtImage)
+
+        /**
+        * Lights
+        */
+        const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.5)
+        spotLight.position.x = -11
+        spotLight.position.y = 4.5
+        spotLight.position.z = 1
+        klimtFrameworkGroup.add(spotLight)
+
+        spotLight.target.position.x = -11.5
+        spotLight.target.position.y = 1.5
+        spotLight.target.position.z = 1
+        klimtFrameworkGroup.add(spotLight.target)
+
+      
     }
 }

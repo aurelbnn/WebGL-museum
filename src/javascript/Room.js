@@ -48,6 +48,7 @@ export default class Room
             aoMap: woodFloorAmbientTexture,
             metalness: 0.6,
             roughness: 0.5,
+            side: THREE.DoubleSide
         })
 
         const darkMaterial = new THREE.MeshStandardMaterial({
@@ -71,6 +72,33 @@ export default class Room
                 bevelSegments: 10
             }
         )
+
+        //light on the text
+
+        const directionalLight = new THREE.DirectionalLight(0xe39d52, 0.25)
+        directionalLight.position.x = 9
+        directionalLight.position.y = 1
+        directionalLight.position.z = -1
+        directionalLight.rotation.y = Math.PI * 0.6
+
+
+        _scene.add(directionalLight)
+
+        const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight)
+        _scene.add(directionalLightHelper)  
+        // const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.1, 0.7)
+        // spotLight.position.x = 13
+        // spotLight.position.y = 1
+        // spotLight.position.z = 0
+        // _scene.add(spotLight)
+
+        // spotLight.target.position.x = 8
+        // spotLight.target.position.y = 1
+        // spotLight.target.position.z = 0
+        // _scene.add(spotLight.target)
+
+        // const spotLightHelper = new THREE.SpotLightHelper(spotLight)
+        // _scene.add(spotLightHelper)
 
         /**
          * Walls creation for the room / floor and base for vitruvian man
