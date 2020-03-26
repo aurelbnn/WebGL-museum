@@ -1,6 +1,6 @@
 # WebGL Museum
 
-![M.I.I.](src/images/mii-presentation.png)
+![M.I.I.](mii-presentation.png)
 
 ## Project
 
