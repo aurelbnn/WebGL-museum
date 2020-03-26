@@ -131,9 +131,7 @@ export default class FirstFramework {
           */
 
         const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.5)
-        spotLight.position.x = 2.5
-        spotLight.position.y = 4
-        spotLight.position.z = 8
+        spotLight.position.set(2.5, 4, 8)
         firstFrameworkGroup.add(spotLight)
 
         spotLight.target.position.x = 2.5
