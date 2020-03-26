@@ -45,6 +45,11 @@ export default class FirstFramework {
             color: 0x04072C,
         })
 
+        const whiteMaterial = new THREE.MeshStandardMaterial({
+            map: wallpaperColorTexture,
+            color: 0xffffff,
+        })
+
 
         const firstFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
         firstFrameworkWallPartOneMesh.position.x = 4.375
@@ -77,10 +82,10 @@ export default class FirstFramework {
         firstFrameworkFloorMesh.position.z = 9
         firstFrameworkGroup.add(firstFrameworkFloorMesh)
 
-        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2.1), wallsMaterial)
+        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2), whiteMaterial)
         firstFrameworkCeilingMesh.position.x = 2.5
         firstFrameworkCeilingMesh.position.y = 4
-        firstFrameworkCeilingMesh.position.z = 9
+        firstFrameworkCeilingMesh.position.z = 9.05
         firstFrameworkGroup.add(firstFrameworkCeilingMesh)
 
         /**

@@ -43,6 +43,11 @@ export default class SecondFramework
             color: 0x04072C,
         })
 
+        const whiteMaterial = new THREE.MeshStandardMaterial({
+            map: wallpaperColorTexture,
+            color: 0xffffff,
+        })
+
         /**
          * Box
         */
@@ -77,10 +82,10 @@ export default class SecondFramework
         secondFrameworkFloorMesh.position.z = 10
         secondFrameworkGroup.add(secondFrameworkFloorMesh)
 
-        const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), wallsMaterial)
-        secondFrameworkCeilingMesh.position.x = -8.7
+        const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), whiteMaterial)
+        secondFrameworkCeilingMesh.position.x = -8.5
         secondFrameworkCeilingMesh.position.y = 4
-        secondFrameworkCeilingMesh.position.z = 10
+        secondFrameworkCeilingMesh.position.z = 10.
         secondFrameworkGroup.add(secondFrameworkCeilingMesh)
 
         /**
