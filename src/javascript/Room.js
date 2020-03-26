@@ -140,7 +140,7 @@ export default class Room
         wallEighthMesh.rotation.y = Math.PI * -0.5
         roomGroup.add(wallEighthMesh)
 
-        const wallNinthMesh = new THREE.Mesh(new THREE.BoxGeometry( 4.1, 3.95, 0.1 ), wallsMaterial)
+        const wallNinthMesh = new THREE.Mesh(new THREE.BoxGeometry( 4, 3.95, 0.1 ), wallsMaterial)
         wallNinthMesh.position.x = 2.95
         wallNinthMesh.position.y = 1.975
         wallNinthMesh.position.z = -3

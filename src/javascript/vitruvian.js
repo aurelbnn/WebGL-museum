@@ -22,10 +22,26 @@ export default class VitruvianMan{
                 {
                     const child = _gltf.scene.children[0]
                     _scene.add(child)
-
-                    child.rotation.y = Math.PI * -0.75
-                    child.position.y = 4
                     
+                    child.position.x = 2.5
+                    child.position.y = 0.5
+                    child.position.z = -0.5
+                    child.rotation.z = Math.PI * -0.5
+                    child.scale.x = 0.4
+                    child.scale.y = 0.4
+                    child.scale.z = 0.4
+
+                    /**
+                     * Loop
+                     */
+                    const loop = () => {
+                        window.requestAnimationFrame(loop)
+                    
+                        //Vitruvian rotation
+                        child.rotation.z += -0.02
+                    }
+
+                    loop()
                 }
             }
         )
