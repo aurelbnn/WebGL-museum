@@ -106,14 +106,14 @@ JocondeFrameBottomMesh.position.y = 1
 JocondeFrameBottomMesh.position.z = 7.9 
 JocondeSoundGroup.add(JocondeFrameBottomMesh)
 
-const JocondeFrameLeft = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
+const JocondeFrameLeft = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
 const JocondeFrameLeftMesh = new THREE.Mesh(JocondeFrameLeft, frameworkMaterial)
 JocondeFrameLeftMesh.position.x = 3.8
 JocondeFrameLeftMesh.position.y = 2
 JocondeFrameLeftMesh.position.z = 7.9 
 JocondeSoundGroup.add(JocondeFrameLeftMesh)
 
-const JocondeFrameRight = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
+const JocondeFrameRight = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
 const JocondeFrameRightMesh = new THREE.Mesh(JocondeFrameRight, frameworkMaterial)
 JocondeFrameRightMesh.position.x = 1.2
 JocondeFrameRightMesh.position.y = 2
@@ -148,14 +148,14 @@ EnferFrameBottomMesh.position.y = 1
 EnferFrameBottomMesh.position.z = 7.9 
 EnferSoundGroup.add(EnferFrameBottomMesh)
 
-const EnferFrameLeft = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
+const EnferFrameLeft = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
 const EnferFrameLeftMesh = new THREE.Mesh(EnferFrameLeft, frameworkMaterial)
 EnferFrameLeftMesh.position.x = 3.8
 EnferFrameLeftMesh.position.y = 2
 EnferFrameLeftMesh.position.z = 7.9 
 EnferSoundGroup.add(EnferFrameLeftMesh)
 
-const EnferFrameRight = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
+const EnferFrameRight = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
 const EnferFrameRightMesh = new THREE.Mesh(EnferFrameRight, frameworkMaterial)
 EnferFrameRightMesh.position.x = 1.2
 EnferFrameRightMesh.position.y = 2
@@ -193,7 +193,7 @@ KlimtFrameBottomMesh.position.y = 1
 KlimtFrameBottomMesh.position.z = 7.9 
 KlimtSoundGroup.add(KlimtFrameBottomMesh)
 
-const KlimtFrameLeft = new THREE.BoxGeometry(0.1, 3, 0.1, 0.1)
+const KlimtFrameLeft = new THREE.BoxGeometry(0.1, 3.1, 0.1, 0.1)
 const KlimtFrameLeftMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
 const KlimtFrameLeftMesh = new THREE.Mesh(KlimtFrameLeft, frameworkMaterial)
 KlimtFrameLeftMesh.position.x = 4
@@ -201,7 +201,7 @@ KlimtFrameLeftMesh.position.y = 2.5
 KlimtFrameLeftMesh.position.z = 7.9 
 KlimtSoundGroup.add(KlimtFrameLeftMesh)
 
-const KlimtFrameRight = new THREE.BoxGeometry(0.1, 3, 0.1, 0.1)
+const KlimtFrameRight = new THREE.BoxGeometry(0.1, 3.1, 0.1, 0.1)
 const KlimtFrameRightMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
 const KlimtFrameRightMesh = new THREE.Mesh(KlimtFrameRight, frameworkMaterial)
 KlimtFrameRightMesh.position.x = 1
