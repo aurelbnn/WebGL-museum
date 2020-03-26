@@ -82,7 +82,7 @@ export default class SecondFramework
         secondFrameworkFloorMesh.position.z = 10
         secondFrameworkGroup.add(secondFrameworkFloorMesh)
 
-        const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), whiteMaterial)
+        const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), darkMaterial)
         secondFrameworkCeilingMesh.position.x = -8.5
         secondFrameworkCeilingMesh.position.y = 4
         secondFrameworkCeilingMesh.position.z = 10.
