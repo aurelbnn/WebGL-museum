@@ -16,9 +16,10 @@ export default class VitruvianMan{
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/vitruvian/vitruvian.gltf',
+            '/models/vitruvian/vitruvian_creature001.gltf',
             (_gltf) =>
             {
+                 console.log(_gltf)
                 while(_gltf.scene.children.length)
                 {
                     const child = _gltf.scene.children[0]
@@ -42,7 +43,6 @@ export default class VitruvianMan{
                 }
             }
         )
-
 
         /**
          * Lights

@@ -35,7 +35,6 @@ export default class FirstFramework {
 
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
-            normalMap: wallpaperNormalTexture,
             color: 0xd3d3d3,
         })
 
@@ -50,19 +49,19 @@ export default class FirstFramework {
             color: 0xffffff,
         })
 
-        const firstFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
+        const firstFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), darkMaterial)
         firstFrameworkWallPartOneMesh.position.set(4.375, 2, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartOneMesh)
 
-        const firstFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
+        const firstFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), darkMaterial)
         firstFrameworkWallPartTwoMesh.position.set(0.625, 2, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartTwoMesh)
 
-        const firstFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
+        const firstFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), darkMaterial)
         firstFrameworkWallPartThreeMesh.position.set(2.5, 3.5, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartThreeMesh)
 
-        const firstFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
+        const firstFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), darkMaterial)
         firstFrameworkWallPartFourMesh.position.set(2.5, 0.5, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartFourMesh)
 
@@ -70,16 +69,10 @@ export default class FirstFramework {
         firstFrameworkFloorMesh.position.set(2.5, 0.1, 9)
         firstFrameworkGroup.add(firstFrameworkFloorMesh)
 
-        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2), whiteMaterial)
+        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5, 0.1, 2), darkMaterial)
         firstFrameworkCeilingMesh.position.set(2.5, 4, 9.05)
         firstFrameworkGroup.add(firstFrameworkCeilingMesh)
-
-        /**
-         * Images Joconde
-         */
-        const jocondeGroup = new THREE.Group()
-        jocondeGroup.visible = true
-        _scene.add(jocondeGroup)
+        _scene.add(firstFrameworkCeilingMesh)
 
         //FIRST       
         const jocondeFirstImage = new THREE.Mesh(

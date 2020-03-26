@@ -43,34 +43,29 @@ export default class SecondFramework
             color: 0x04072C,
         })
 
-        const whiteMaterial = new THREE.MeshStandardMaterial({
-            map: wallpaperColorTexture,
-            color: 0xffffff,
-        })
-
         /**
          * Box
         */
 
-        const secondFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), darkMaterial)
         secondFrameworkWallPartOneMesh.position.x = -10.375
         secondFrameworkWallPartOneMesh.position.y = 2
         secondFrameworkWallPartOneMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartOneMesh)
 
-        const secondFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), darkMaterial)
         secondFrameworkWallPartTwoMesh.position.x = -6.675
         secondFrameworkWallPartTwoMesh.position.y = 2
         secondFrameworkWallPartTwoMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartTwoMesh)
 
-        const secondFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), darkMaterial)
         secondFrameworkWallPartThreeMesh.position.x = -8.5
         secondFrameworkWallPartThreeMesh.position.y = 3.5
         secondFrameworkWallPartThreeMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartThreeMesh)
 
-        const secondFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), darkMaterial)
         secondFrameworkWallPartFourMesh.position.x = -8.5
         secondFrameworkWallPartFourMesh.position.y = 0.5
         secondFrameworkWallPartFourMesh.position.z = 8
