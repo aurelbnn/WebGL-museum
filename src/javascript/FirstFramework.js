@@ -50,42 +50,28 @@ export default class FirstFramework {
             color: 0xffffff,
         })
 
-
         const firstFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
-        firstFrameworkWallPartOneMesh.position.x = 4.375
-        firstFrameworkWallPartOneMesh.position.y = 2
-        firstFrameworkWallPartOneMesh.position.z = 8
+        firstFrameworkWallPartOneMesh.position.set(4.375, 2, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartOneMesh)
 
         const firstFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry(1.25, 4, 0.1), wallsMaterial)
-        firstFrameworkWallPartTwoMesh.position.x = 0.625
-        firstFrameworkWallPartTwoMesh.position.y = 2
-        firstFrameworkWallPartTwoMesh.position.z = 8
+        firstFrameworkWallPartTwoMesh.position.set(0.625, 2, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartTwoMesh)
 
         const firstFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
-        firstFrameworkWallPartThreeMesh.position.x = 2.5
-        firstFrameworkWallPartThreeMesh.position.y = 3.5
-        firstFrameworkWallPartThreeMesh.position.z = 8
+        firstFrameworkWallPartThreeMesh.position.set(2.5, 3.5, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartThreeMesh)
 
-
         const firstFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry(2.5, 1, 0.1), wallsMaterial)
-        firstFrameworkWallPartFourMesh.position.x = 2.5
-        firstFrameworkWallPartFourMesh.position.y = 0.5
-        firstFrameworkWallPartFourMesh.position.z = 8
+        firstFrameworkWallPartFourMesh.position.set(2.5, 0.5, 8)
         firstFrameworkGroup.add(firstFrameworkWallPartFourMesh)
 
         const firstFrameworkFloorMesh = new THREE.Mesh(new THREE.BoxGeometry(5, 0.1, 2), darkMaterial)
-        firstFrameworkFloorMesh.position.x = 2.5
-        firstFrameworkFloorMesh.position.y = 0.1
-        firstFrameworkFloorMesh.position.z = 9
+        firstFrameworkFloorMesh.position.set(2.5, 0.1, 9)
         firstFrameworkGroup.add(firstFrameworkFloorMesh)
 
         const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2), whiteMaterial)
-        firstFrameworkCeilingMesh.position.x = 2.5
-        firstFrameworkCeilingMesh.position.y = 4
-        firstFrameworkCeilingMesh.position.z = 9.05
+        firstFrameworkCeilingMesh.position.set(2.5, 4, 9.05)
         firstFrameworkGroup.add(firstFrameworkCeilingMesh)
 
         /**
@@ -104,9 +90,7 @@ export default class FirstFramework {
                 transparent: true,
             })
         )
-        jocondeFirstImage.position.x = 2.5
-        jocondeFirstImage.position.y = 1.5
-        jocondeFirstImage.position.z = 8.5
+        jocondeFirstImage.position.set(2.5, 1.5, 8.5)
         jocondeFirstImage.rotation.x = Math.PI
         jocondeFirstImage.rotation.z = Math.PI
         firstFrameworkGroup.add(jocondeFirstImage)
@@ -120,9 +104,7 @@ export default class FirstFramework {
                 transparent: true,
             })
         )        
-        jocondeSecondImage.position.x = 2.5
-        jocondeSecondImage.position.y = 1.5
-        jocondeSecondImage.position.z = 9
+        jocondeSecondImage.position.set(2.5, 1.5, 9)
         jocondeSecondImage.rotation.x = Math.PI
         jocondeSecondImage.rotation.z = Math.PI
         firstFrameworkGroup.add(jocondeSecondImage)
@@ -134,9 +116,7 @@ export default class FirstFramework {
                 map: jocondeThirdTexture,
             })
         )
-        jocondeThirdImage.position.x = 2.5
-        jocondeThirdImage.position.y = 1.5
-        jocondeThirdImage.position.z = 9.5
+        jocondeThirdImage.position.set(2.5, 1.5, 9.5)
         jocondeThirdImage.rotation.x = Math.PI
         jocondeThirdImage.rotation.z = Math.PI
         firstFrameworkGroup.add(jocondeThirdImage)
