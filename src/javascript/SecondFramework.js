@@ -60,7 +60,7 @@ export default class SecondFramework
         secondFrameworkGroup.add(secondFrameworkWallPartTwoMesh)
 
         const secondFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), wallsMaterial)
-        secondFrameworkWallPartThreeMesh.position.x = -8.5
+        secondFrameworkWallPartThreeMesh.position.x = -8.625
         secondFrameworkWallPartThreeMesh.position.y = 3.5
         secondFrameworkWallPartThreeMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartThreeMesh)
@@ -78,7 +78,7 @@ export default class SecondFramework
         secondFrameworkGroup.add(secondFrameworkFloorMesh)
 
         const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), wallsMaterial)
-        secondFrameworkCeilingMesh.position.x = -8.7
+        secondFrameworkCeilingMesh.position.x = -8.5
         secondFrameworkCeilingMesh.position.y = 4
         secondFrameworkCeilingMesh.position.z = 10
         secondFrameworkGroup.add(secondFrameworkCeilingMesh)
