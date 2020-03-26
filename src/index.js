@@ -66,8 +66,6 @@ camera.position.y = 8
 camera.position.z = -8
 scene.add(camera)
 
-<<<<<<< HEAD
-=======
 /**
  * Audio
  */
@@ -84,7 +82,7 @@ const JocondeSound = new THREE.PositionalAudio(listener)
 const audioLoader = new THREE.AudioLoader()
 audioLoader.load(JocondeSoundSource, function (buffer) {
     JocondeSound.setBuffer(buffer)
-    JocondeSound.setRefDistance(2)
+    JocondeSound.setRefDistance(1)
     JocondeSound.play()
 })
 
@@ -130,7 +128,7 @@ const EnferSound = new THREE.PositionalAudio(listener)
 
 audioLoader.load(EnferSoundSource, function (buffer) {
     EnferSound.setBuffer(buffer)
-    EnferSound.setRefDistance(2)
+    EnferSound.setRefDistance(1)
     EnferSound.play()
 })
 
@@ -177,7 +175,7 @@ const KlimtSound = new THREE.PositionalAudio(listener)
 
 audioLoader.load(KlimtSoundSource, function (buffer) {
     KlimtSound.setBuffer(buffer)
-    KlimtSound.setRefDistance(2)
+    KlimtSound.setRefDistance(1)
     KlimtSound.play()
 })
 
@@ -242,7 +240,7 @@ const VitruveSound = new THREE.PositionalAudio(listener)
 
 audioLoader.load(VitruveSoundSource, function (buffer) {
     VitruveSound.setBuffer(buffer)
-    VitruveSound.setRefDistance(2)
+    VitruveSound.setRefDistance(1)
     VitruveSound.play()
 })
 
@@ -255,7 +253,6 @@ scene.add(vitruveBase)
 
 vitruveBase.add(VitruveSound)
 
->>>>>>> 0dd313f22c2e3cd2962539b52c320d8ae7ce0164
 
 /**
  * Lights
