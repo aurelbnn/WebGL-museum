@@ -195,7 +195,7 @@ export default class Room
         wallTwelfthMesh.rotation.y = Math.PI * -0.5
         roomGroup.add(wallTwelfthMesh)
 
-        const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(30, 30, 1, 1), material)
+        const floor = new THREE.Mesh(new THREE.PlaneBufferGeometry(30, 25, 1, 1), material)
         floor.position.y = 0
         floor.rotation.x -= Math.PI * 0.5
         roomGroup.add(floor)
