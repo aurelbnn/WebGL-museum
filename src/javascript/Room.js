@@ -41,7 +41,7 @@ export default class Room
             aoMap: wallpaperAmbientTexture,
             metalness: 0.4,
             roughness: 0.4,
-            color: 0xb33939,
+            color: 0xD2C895,
         })
         const material = new THREE.MeshStandardMaterial({
             map: woodfloorColorTexture,

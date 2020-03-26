@@ -10,6 +10,7 @@ import Fire from './javascript/Fire.js'
 import KlimtFramework from './javascript/KlimtFramework.js'
 import VitruvianMan from './javascript/VitruvianMan.js'
 import Controllers from './javascript/Controllers.js'
+import Star from './javascript/Star.js'
 import JocondeSoundSource from './audios/huming-sound.mp3'
 import EnferSoundSource from './audios/fire.mp3'
 import KlimtSoundSource from './audios/debussy.mp3'
@@ -62,6 +63,8 @@ const vitruvianManZone = new VitruvianMan(scene)
 
 const controllers = new Controllers(scene)
 
+const star = new Star(scene)
+
 /**
 * Camera
 */
@@ -110,7 +113,7 @@ const frameworkMaterial = new THREE.MeshStandardMaterial({
     aoMap: wallpaperAmbientTexture,
     metalness: 0.4,
     roughness: 0.4,
-    color: 0xb33939,
+    color: 0xD2C895,
 })
 
 

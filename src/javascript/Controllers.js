@@ -8,7 +8,7 @@ export default class Controllers
         const controllersMaterial = new THREE.MeshStandardMaterial({
             metalness: 0.4,
             roughness: 0.4,
-            color: 0xb33939,
+            color: 0xD2C895,
         })
 
         const controllerGroup = new THREE.Group()
