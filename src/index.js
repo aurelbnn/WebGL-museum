@@ -62,7 +62,6 @@ const vitruvianManZone = new VitruvianMan(scene)
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
 camera.lookAt(scene.position)
 camera.position.y = 1.7
-
 camera.position.z = 8
 scene.add(camera)
 
