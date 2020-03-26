@@ -6,7 +6,7 @@ import FirstFramework from './javascript/FirstFramework.js'
 import SecondFramework from './javascript/SecondFramework.js'
 import Fire from './javascript/Fire.js'
 import KlimtFramework from './javascript/klimtFramework.js'
-
+import VitruvianMan from './javascript/vitruvian.js'
 
 /**
  * Sizes
@@ -44,6 +44,7 @@ const fireEffect = new Fire(scene)
 
 const klimtFrameworkZone = new KlimtFramework(scene)
 
+const vitruvianManZone = new VitruvianMan(scene)
 
 /**
  * Camera
@@ -75,7 +76,7 @@ audioLoader.load( 'sounds/song.ogg', function( buffer ) {
 });
 
 // finally add the sound to the mesh
-firstFrameworkGroup.add( sound );
+//firstFrameworkGroup.add( sound );
 
 
 /**
