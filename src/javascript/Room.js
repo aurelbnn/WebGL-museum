@@ -134,10 +134,10 @@ export default class Room
         wallFifthMesh.position.z = 8
         roomGroup.add(wallFifthMesh)
 
-        const wallSixthMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.1, 3.95, 0.1 ), wallsMaterial)
+        const wallSixthMesh = new THREE.Mesh(new THREE.BoxGeometry( 2, 3.95, 0.1 ), wallsMaterial)
         wallSixthMesh.position.x = 0
         wallSixthMesh.position.y = 1.975
-        wallSixthMesh.position.z = 9
+        wallSixthMesh.position.z = 9.05
         wallSixthMesh.rotation.y = Math.PI * 0.5
         roomGroup.add(wallSixthMesh)
 

@@ -250,7 +250,7 @@ audioLoader.load(VitruveSoundSource, function (buffer) {
 const vitruveBase = new THREE.Mesh(new THREE.BoxGeometry( 3, 1, 3 ), wallsMaterial)
 vitruveBase.position.x = 2.5
 vitruveBase.position.y = 0
-vitruveBase.position.z = 2
+vitruveBase.position.z = -0.5
 vitruveBase.rotation.y = Math.PI * -0.5
 scene.add(vitruveBase)
 
@@ -381,8 +381,8 @@ const loop = () =>
     const time = performance.now();
     const delta = ( time - prevTime ) / 1000;
 
-    velocity.x -= velocity.x * 2 * delta;
-    velocity.z -= velocity.z * 2 * delta;
+    velocity.x -= velocity.x * 5 * delta;
+    velocity.z -= velocity.z * 5 * delta;
 
     /**
      *   Create a variable to have the axe of direction  exp : if direction x === -1 the locker go left
@@ -396,11 +396,11 @@ const loop = () =>
     */
     if ( moveForward || moveBackward )
     {
-        velocity.z -= direction.z * 10 * delta;
+        velocity.z -= direction.z * 8 * delta;
     }
     if ( moveLeft || moveRight )
     {
-        velocity.x -= direction.x * 10 * delta;
+        velocity.x -= direction.x * 8 * delta;
     }
 
     /**

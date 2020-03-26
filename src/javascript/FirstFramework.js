@@ -70,15 +70,8 @@ export default class FirstFramework {
         firstFrameworkFloorMesh.position.set(2.5, 0.1, 9)
         firstFrameworkGroup.add(firstFrameworkFloorMesh)
 
-        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2), whiteMaterial)
         firstFrameworkCeilingMesh.position.set(2.5, 4, 9.05)
         firstFrameworkGroup.add(firstFrameworkCeilingMesh)
-
-        /**
-         * Images Joconde
-         */
-        const jocondeGroup = new THREE.Group()
-        jocondeGroup.visible = true
         _scene.add(jocondeGroup)
 
         //FIRST       

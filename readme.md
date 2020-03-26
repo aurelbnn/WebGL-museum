@@ -3,18 +3,12 @@
 
 ## Features
 
-- Basic files support (html, css, js, stylus, fonts, images)
-- Extracted CSS
-- Transpiling (with Babel)
-- Sourcemaps
-- Clean dist
-- Dev server with local network support
-- Static files
-- Cache breaker
+- WebGL world
 - Paralax when aproach paintings
 - 3D sound desing near paintings
-- WebGL 
-- 3D paintings 
+- 3D paintings
+- Draco compression
+- First person camera
 
 
 ## Project
@@ -28,21 +22,15 @@ all the rights of the works belong to their respective authors.
 
 ## Instructions
 
-Install dependencies
+To open the presentation
 
 ```
-npm i
+Escape
 ```
 
-Launch dev server
+To navigate in our museum
 
 ```
-npm run dev
+Z Q S D
 ```
 
-Build for production
-
-```
-npm run build
-```
-when on the website ZQSD to move
