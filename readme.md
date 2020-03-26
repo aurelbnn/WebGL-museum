@@ -11,6 +11,11 @@
 - Dev server with local network support
 - Static files
 - Cache breaker
+- Paralax when aproach paintings
+- 3D sound desing near paintings
+- WebGL 
+- 3D paintings 
+
 
 ## Project
 
@@ -40,3 +45,4 @@ Build for production
 ```
 npm run build
 ```
+when on the website ZQSD to move
