@@ -82,7 +82,7 @@ export default class FirstFramework {
         firstFrameworkFloorMesh.position.z = 9
         firstFrameworkGroup.add(firstFrameworkFloorMesh)
 
-        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2), whiteMaterial)
+        const firstFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry(5.1, 0.1, 2), darkMaterial)
         firstFrameworkCeilingMesh.position.x = 2.5
         firstFrameworkCeilingMesh.position.y = 4
         firstFrameworkCeilingMesh.position.z = 9.05
