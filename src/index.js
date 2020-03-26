@@ -38,6 +38,8 @@ window.addEventListener('mousemove', (_event) =>
     cursor.y = _event.clientY / sizes.height - 0.5
 })
 
+
+
 /**
  * Scene
  */
@@ -60,9 +62,11 @@ const vitruvianManZone = new VitruvianMan(scene)
 * Camera
 */
 const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
-camera.lookAt(scene.position)
+// camera.lookAt(scene.position)
+camera.position.x = 10
+camera.position.z = 14
 camera.position.y = 1.7
-camera.position.z = 8
+
 scene.add(camera)
 
 // move
@@ -252,7 +256,7 @@ audioLoader.load(VitruveSoundSource, function (buffer) {
 const vitruveBase = new THREE.Mesh(new THREE.BoxGeometry( 3, 1, 3 ), wallsMaterial)
 vitruveBase.position.x = 2.5
 vitruveBase.position.y = 0
-vitruveBase.position.z = -0.5
+vitruveBase.position.z = 2
 vitruveBase.rotation.y = Math.PI * -0.5
 scene.add(vitruveBase)
 
@@ -267,18 +271,6 @@ scene.add(ambientLight)
 
 const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1)
 scene.add(hemisphereLight)
-
-// const ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
-// scene.add(ambientLight)
-
-// const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9)
-// directionalLight.position.x = -5
-// directionalLight.position.y = 4
-
-// directionalLight.position.z = -3
-// scene.add(directionalLight)
-
-// // white spotlight shining from the side, casting a shadow
 
 const spotLight = new THREE.SpotLight( 0xd3d3d3 )
 spotLight.position.set( 1, 9, -20 )
@@ -309,43 +301,56 @@ let direction = new  THREE.Vector3
 controls.unlock()
 scene.add( controls.getObject() )
 
+
+
     /** Controls KeysDown*/
-const onKeyDown =  ( _event ) => {
+    const onKeyDown =  ( _event ) => {
     if (_event.code === 'KeyW')
     {
-        moveForward = true;
+        moveForward = true
+        controls.lock()
     }
     if (_event.code === 'KeyS')
     {
-        moveBackward = true;
+        moveBackward = true
+        controls.lock()
+
     }
     if (_event.code === 'KeyA')
     {
-        moveLeft = true;
+        moveLeft = true
+        controls.lock()
+
     }
     if (_event.code === 'KeyD')
     {
-        moveRight = true;
+        moveRight = true
+        controls.lock()
     }
 }
     /** Controls KeyUp*/
     const onKeyUp = ( _event ) =>{
     if (_event.code === 'KeyW')
     {
-        moveForward = false;
+        moveForward = false
+
     }
     if (_event.code === 'KeyS')
     {
-        moveBackward = false;
+        moveBackward = false
+
     }
     if (_event.code === 'KeyA')
     {
-        moveLeft = false;
+        moveLeft = false
+
     }
     if (_event.code === 'KeyD')
     {
-        moveRight = false;
+        moveRight = false
+        console.log(_event)
     }
+
 }
 
 document.addEventListener( 'keydown', onKeyDown )
@@ -372,6 +377,8 @@ window.addEventListener('resize', () => {
 
 const loop = () =>
 {
+
+    
     window.requestAnimationFrame(loop)
 
     /**
@@ -389,7 +396,7 @@ const loop = () =>
     direction.z = Number( moveForward ) - Number( moveBackward );
     direction.x = Number( moveRight ) - Number( moveLeft );
     direction.normalize()
-
+ 
     /**
      *   Applicate the velocity for direction
     */
