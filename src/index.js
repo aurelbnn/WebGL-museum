@@ -95,33 +95,35 @@ audioLoader.load(JocondeSoundSource, function (buffer) {
     JocondeSound.play()
 })
 
+const whiteMaterial = new THREE.MeshStandardMaterial({
+    map: wallpaperColorTexture,
+    color: 0xffffff,
+})
+
+
 const JocondeFrameTop = new THREE.BoxGeometry(2.6, 0.1, 0.1, 0.1)
-const JocondeFrameTopMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const JocondeFrameTopMesh = new THREE.Mesh(JocondeFrameTop, JocondeFrameTopMaterial)
+const JocondeFrameTopMesh = new THREE.Mesh(JocondeFrameTop, whiteMaterial)
 JocondeFrameTopMesh.position.x = 2.5
 JocondeFrameTopMesh.position.y = 3
 JocondeFrameTopMesh.position.z = 7.9 
 JocondeSoundGroup.add(JocondeFrameTopMesh)
 
 const JocondeFrameBottom = new THREE.BoxGeometry(2.6, 0.1, 0.1, 0.1)
-const JocondeFrameBottomMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const JocondeFrameBottomMesh = new THREE.Mesh(JocondeFrameBottom, JocondeFrameBottomMaterial)
+const JocondeFrameBottomMesh = new THREE.Mesh(JocondeFrameBottom, whiteMaterial)
 JocondeFrameBottomMesh.position.x = 2.5
 JocondeFrameBottomMesh.position.y = 1
 JocondeFrameBottomMesh.position.z = 7.9 
 JocondeSoundGroup.add(JocondeFrameBottomMesh)
 
-const JocondeFrameLeft = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
-const JocondeFrameLeftMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const JocondeFrameLeftMesh = new THREE.Mesh(JocondeFrameLeft, JocondeFrameLeftMaterial)
+const JocondeFrameLeft = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
+const JocondeFrameLeftMesh = new THREE.Mesh(JocondeFrameLeft, whiteMaterial)
 JocondeFrameLeftMesh.position.x = 3.8
 JocondeFrameLeftMesh.position.y = 2
 JocondeFrameLeftMesh.position.z = 7.9 
 JocondeSoundGroup.add(JocondeFrameLeftMesh)
 
-const JocondeFrameRight = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
-const JocondeFrameRightMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const JocondeFrameRightMesh = new THREE.Mesh(JocondeFrameRight, JocondeFrameRightMaterial)
+const JocondeFrameRight = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
+const JocondeFrameRightMesh = new THREE.Mesh(JocondeFrameRight, whiteMaterial)
 JocondeFrameRightMesh.position.x = 1.2
 JocondeFrameRightMesh.position.y = 2
 JocondeFrameRightMesh.position.z = 7.9 
@@ -142,32 +144,28 @@ audioLoader.load(EnferSoundSource, function (buffer) {
 })
 
 const EnferFrameTop = new THREE.BoxGeometry(2.6, 0.1, 0.1, 0.1)
-const EnferFrameTopMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const EnferFrameTopMesh = new THREE.Mesh(EnferFrameTop, EnferFrameTopMaterial)
+const EnferFrameTopMesh = new THREE.Mesh(EnferFrameTop, whiteMaterial)
 EnferFrameTopMesh.position.x = 2.5
 EnferFrameTopMesh.position.y = 3
 EnferFrameTopMesh.position.z = 7.9 
 EnferSoundGroup.add(EnferFrameTopMesh)
 
 const EnferFrameBottom = new THREE.BoxGeometry(2.6, 0.1, 0.1, 0.1)
-const EnferFrameBottomMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const EnferFrameBottomMesh = new THREE.Mesh(EnferFrameBottom, EnferFrameBottomMaterial)
+const EnferFrameBottomMesh = new THREE.Mesh(EnferFrameBottom, whiteMaterial)
 EnferFrameBottomMesh.position.x = 2.5
 EnferFrameBottomMesh.position.y = 1
 EnferFrameBottomMesh.position.z = 7.9 
 EnferSoundGroup.add(EnferFrameBottomMesh)
 
-const EnferFrameLeft = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
-const EnferFrameLeftMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const EnferFrameLeftMesh = new THREE.Mesh(EnferFrameLeft, EnferFrameLeftMaterial)
+const EnferFrameLeft = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
+const EnferFrameLeftMesh = new THREE.Mesh(EnferFrameLeft, whiteMaterial)
 EnferFrameLeftMesh.position.x = 3.8
 EnferFrameLeftMesh.position.y = 2
 EnferFrameLeftMesh.position.z = 7.9 
 EnferSoundGroup.add(EnferFrameLeftMesh)
 
-const EnferFrameRight = new THREE.BoxGeometry(0.1, 2, 0.1, 0.1)
-const EnferFrameRightMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const EnferFrameRightMesh = new THREE.Mesh(EnferFrameRight, EnferFrameRightMaterial)
+const EnferFrameRight = new THREE.BoxGeometry(0.1, 2.1, 0.1, 0.1)
+const EnferFrameRightMesh = new THREE.Mesh(EnferFrameRight, whiteMaterial)
 EnferFrameRightMesh.position.x = 1.2
 EnferFrameRightMesh.position.y = 2
 EnferFrameRightMesh.position.z = 7.9 
@@ -189,32 +187,28 @@ audioLoader.load(KlimtSoundSource, function (buffer) {
 })
 
 const KlimtFrameTop = new THREE.BoxGeometry(3, 0.1, 0.1, 0.1)
-const KlimtFrameTopMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const KlimtFrameTopMesh = new THREE.Mesh(KlimtFrameTop, KlimtFrameTopMaterial)
+const KlimtFrameTopMesh = new THREE.Mesh(KlimtFrameTop, whiteMaterial)
 KlimtFrameTopMesh.position.x = 2.5
 KlimtFrameTopMesh.position.y = 4
 KlimtFrameTopMesh.position.z = 7.9 
 KlimtSoundGroup.add(KlimtFrameTopMesh)
 
 const KlimtFrameBottom = new THREE.BoxGeometry(3, 0.1, 0.1, 0.1)
-const KlimtFrameBottomMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const KlimtFrameBottomMesh = new THREE.Mesh(KlimtFrameBottom, KlimtFrameBottomMaterial)
+const KlimtFrameBottomMesh = new THREE.Mesh(KlimtFrameBottom, whiteMaterial)
 KlimtFrameBottomMesh.position.x = 2.5
 KlimtFrameBottomMesh.position.y = 1
 KlimtFrameBottomMesh.position.z = 7.9 
 KlimtSoundGroup.add(KlimtFrameBottomMesh)
 
-const KlimtFrameLeft = new THREE.BoxGeometry(0.1, 3, 0.1, 0.1)
-const KlimtFrameLeftMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const KlimtFrameLeftMesh = new THREE.Mesh(KlimtFrameLeft, KlimtFrameLeftMaterial)
+const KlimtFrameLeft = new THREE.BoxGeometry(0.1, 3.1, 0.1, 0.1)
+const KlimtFrameLeftMesh = new THREE.Mesh(KlimtFrameLeft, whiteMaterial)
 KlimtFrameLeftMesh.position.x = 4
 KlimtFrameLeftMesh.position.y = 2.5
 KlimtFrameLeftMesh.position.z = 7.9 
 KlimtSoundGroup.add(KlimtFrameLeftMesh)
 
-const KlimtFrameRight = new THREE.BoxGeometry(0.1, 3, 0.1, 0.1)
-const KlimtFrameRightMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
-const KlimtFrameRightMesh = new THREE.Mesh(KlimtFrameRight, KlimtFrameRightMaterial)
+const KlimtFrameRight = new THREE.BoxGeometry(0.1, 3.1, 0.1, 0.1)
+const KlimtFrameRightMesh = new THREE.Mesh(KlimtFrameRight, whiteMaterial)
 KlimtFrameRightMesh.position.x = 1
 KlimtFrameRightMesh.position.y = 2.5
 KlimtFrameRightMesh.position.z = 7.9 

@@ -26,12 +26,8 @@ export default class VitruvianMan{
                     _scene.add(child)
                     
                     child.position.x = 2.5
-                    child.position.y = 0.5
+                    child.position.y = 0.3
                     child.position.z = -0.5
-                    child.rotation.z = Math.PI * -0.5
-                    child.scale.x = 0.4
-                    child.scale.y = 0.4
-                    child.scale.z = 0.4
 
                     /**
                      * Loop
@@ -40,7 +36,7 @@ export default class VitruvianMan{
                         window.requestAnimationFrame(loop)
                     
                         //Vitruvian rotation
-                        child.rotation.z += -0.02
+                        child.rotation.y += -0.01
                     }
 
                     loop()
