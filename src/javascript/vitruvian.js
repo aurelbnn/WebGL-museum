@@ -19,7 +19,6 @@ export default class VitruvianMan{
             '/models/vitruvian/vitruvian_creature001.gltf',
             (_gltf) =>
             {
-                 console.log(_gltf)
                 while(_gltf.scene.children.length)
                 {
                     const child = _gltf.scene.children[0]
