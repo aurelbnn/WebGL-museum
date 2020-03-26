@@ -3,14 +3,21 @@ import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' //
 import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
 import enferNormalSource from '../images/enfer/enferPlan.jpg'// Chaudron
 import enferAlphaSource from '../images/enfer/enferAlpha.jpg' // Chaudron Alpha
+import fireNormalSource from '../images/enfer/fire.jpg'// flammes
+import fireAlphaSource from '../images/enfer/fireAlpha.jpg' // flammes Alpha
 
 /**
  * Textures
  */
 const textureLoader = new THREE.TextureLoader()
 
+//Painting
 const enferNormalTexture = textureLoader.load(enferNormalSource)
 const enferAlphaTexture = textureLoader.load(enferAlphaSource)
+
+//Fire
+const fireNormalTexture = textureLoader.load(fireNormalSource)
+const fireAlphaTexture = textureLoader.load(fireAlphaSource)
 
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
@@ -81,7 +88,20 @@ export default class SecondFramework
          */
 
          //FIRST : flammes
-
+         const enferFirstPlan = new THREE.Mesh(
+            new THREE.PlaneGeometry(3, 3, 1, 1),
+            new THREE.MeshBasicMaterial({ 
+                map: fireNormalTexture,
+                alphaMap: fireAlphaTexture,
+                transparent: true,
+            })
+        )        
+        enferFirstPlan.position.x = -8.5
+        enferFirstPlan.position.y = 1.5
+        enferFirstPlan.position.z = 8
+        enferFirstPlan.rotation.x = Math.PI
+        enferFirstPlan.rotation.z = Math.PI
+        secondFrameworkGroup.add(enferFirstPlan)
 
          //SECOND
         const enferSecondPlan = new THREE.Mesh(
@@ -94,7 +114,7 @@ export default class SecondFramework
         )        
         enferSecondPlan.position.x = -8.5
         enferSecondPlan.position.y = 1.5
-        enferSecondPlan.position.z = 8
+        enferSecondPlan.position.z = 8.5
         enferSecondPlan.rotation.x = Math.PI
         enferSecondPlan.rotation.z = Math.PI
         secondFrameworkGroup.add(enferSecondPlan)

@@ -168,12 +168,5 @@ export default class Room
         roomGroup.add(floor)
         
 
-        const vitruveBase = new THREE.Mesh(new THREE.BoxGeometry( 3, 1, 3 ), wallsMaterial)
-        vitruveBase.position.x = 2.5
-        vitruveBase.position.y = 0
-        vitruveBase.position.z = -0.5
-        vitruveBase.rotation.y = Math.PI * -0.5
-        roomGroup.add(vitruveBase)
-
     }
 }
