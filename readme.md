@@ -1,15 +1,6 @@
 # WebGL Museum
 
-
-## Features
-
-- WebGL world
-- Paralax when aproach paintings
-- 3D sound desing near paintings
-- 3D paintings
-- Draco compression
-- First person camera
-
+![M.I.I.](src/images/mii-presentation.png)
 
 ## Project
 
@@ -19,6 +10,15 @@ This experience was carried out by group 1 as part of an intense week in the HET
 We remind you that this is a study project and therefore by definition all copyrights are not applicable. 
 This project is a non-profit project for the promotion of culture.
 all the rights of the works belong to their respective authors.
+
+## Features
+
+- WebGL world
+- Paralax when aproach paintings
+- 3D sound desing near paintings
+- 3D paintings
+- Draco compression
+- First person camera
 
 ## Instructions
 
