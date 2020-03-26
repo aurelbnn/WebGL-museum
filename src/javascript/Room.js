@@ -1,6 +1,5 @@
 import * as THREE from 'three'
-import woodFloorColorSource from '../images/WoodFloor/WoodfloorColor.jpg' //Floor texture
-import woodFloorNormalSource from '../images/WoodFloor/WoodfloorNormal.jpg' // Floor normal
+import floorColorSource from '../images/floor/floor.jpg' //Floor texture
 import woodFloorAmbientSource from '../images/WoodFloor/WoodfloorAmbientOcculsion.jpg' // Floor Ambient occlusion
 import wallpaperColorSource from '../images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
 import wallpaperNormalSource from '../images/Wallpaper/WallpaperNormal.jpg' // Wall normal
@@ -14,15 +13,11 @@ const textureLoader = new THREE.TextureLoader()
 
 
 //Floor
-const woodfloorColorTexture = textureLoader.load(woodFloorColorSource)
+const woodfloorColorTexture = textureLoader.load(floorColorSource)
 woodfloorColorTexture.repeat.x = 6
 woodfloorColorTexture.repeat.y = 6
 woodfloorColorTexture.wrapS = THREE.RepeatWrapping
 woodfloorColorTexture.wrapT = THREE.RepeatWrapping
-
-const woodfloorNormalTexture = textureLoader.load(woodFloorNormalSource)
-woodfloorNormalTexture.wrapS = THREE.RepeatWrapping
-woodfloorNormalTexture.wrapT = THREE.RepeatWrapping
 
 const woodFloorAmbientTexture = textureLoader.load(woodFloorAmbientSource)
 woodFloorAmbientTexture.wrapS = THREE.RepeatWrapping
@@ -43,14 +38,22 @@ export default class Room
 
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
-            normalMap: wallpaperNormalTexture,
             aoMap: wallpaperAmbientTexture,
-            color: 0x04072C,
+            metalness: 0.4,
+            roughness: 0.4,
+            color: 0xb33939,
         })
         const material = new THREE.MeshStandardMaterial({
             map: woodfloorColorTexture,
-            normalMap: woodfloorNormalTexture,
             aoMap: woodFloorAmbientTexture,
+            metalness: 0.6,
+            roughness: 0.5,
+        })
+
+        const darkMaterial = new THREE.MeshStandardMaterial({
+            map: wallpaperColorTexture,
+            normalMap: wallpaperNormalTexture,
+            color: 0x04072C,
         })
 
         //Text presenting the title of the museum
@@ -93,7 +96,7 @@ export default class Room
         wallSecondMesh.rotation.y = Math.PI * 0.5
         roomGroup.add(wallSecondMesh)
 
-        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), new THREE.MeshStandardMaterial({color: 0x000000}))
+        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.9, 0.1 ), darkMaterial)
         wallThirdMesh.position.x = -8.5
         wallThirdMesh.position.y = 2
         wallThirdMesh.position.z = 12
@@ -119,7 +122,7 @@ export default class Room
         wallSixthMesh.rotation.y = Math.PI * 0.5
         roomGroup.add(wallSixthMesh)
 
-        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), wallsMaterial)
+        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 4, 0.1 ), darkMaterial)
         wallSeventhMesh.position.x = 2.5
         wallSeventhMesh.position.y = 2
         wallSeventhMesh.position.z = 10

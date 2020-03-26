@@ -27,6 +27,12 @@ export default class SecondFramework
         const wallsMaterial = new THREE.MeshStandardMaterial({
             map: wallpaperColorTexture,
             normalMap: wallpaperNormalTexture,
+            color: 0xd3d3d3,
+        })
+
+        const darkMaterial = new THREE.MeshStandardMaterial({
+            map: wallpaperColorTexture,
+            normalMap: wallpaperNormalTexture,
             color: 0x04072C,
         })
 
@@ -58,7 +64,7 @@ export default class SecondFramework
         secondFrameworkWallPartFourMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartFourMesh)
 
-        const secondFrameworkFloorMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 0.1, 4 ), wallsMaterial)
+        const secondFrameworkFloorMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 0.1, 4 ), darkMaterial)
         secondFrameworkFloorMesh.position.x = -8.5
         secondFrameworkFloorMesh.position.y = 0.1
         secondFrameworkFloorMesh.position.z = 10
