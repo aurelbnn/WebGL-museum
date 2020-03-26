@@ -16,7 +16,7 @@ export default class VitruvianMan{
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/vitruvian/vitruvian.gltf',
+            '/models/vitruvian/vitruvian.glb',
             (_gltf) =>
             {
                 while(_gltf.scene.children.length)

@@ -6,6 +6,7 @@ import jocondeSecondSource from '../images/joconde/jocondeSecondPlan.jpg' //Deux
 import jocondeThirdSource from '../images/joconde/jocondeThirdPlan.jpg' //Troisème plan Joconde
 import jocondeFirstAlphaSource from '../images/joconde/jocondeFirstAlphaTexture.jpg' //Premier Alpha Joconde
 import jocondeSecondAlphaSource from '../images/joconde/jocondeSecondAlphaTexture.jpg' //Deuxième Alpha Joconde
+import jocondeCaptionSource from '../images/captions/joconde-caption.jpg'
 
 
 /**
@@ -18,6 +19,9 @@ const jocondeSecondTexture = textureLoader.load(jocondeSecondSource)
 const jocondeThirdTexture = textureLoader.load(jocondeThirdSource)
 const jocondeFirstAlphaTexture = textureLoader.load(jocondeFirstAlphaSource) 
 const jocondeSecondAlphaTexture = textureLoader.load(jocondeSecondAlphaSource)
+
+//Captions
+const jocondeCaptionTexture = textureLoader.load(jocondeCaptionSource)
 
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
@@ -117,7 +121,16 @@ export default class FirstFramework {
         /**
          * Caption
          */
-        
+        const jocondeCaption = new THREE.Mesh(
+            new THREE.PlaneGeometry(2, 2, 1, 1),
+            new THREE.MeshBasicMaterial({ 
+                map: jocondeCaptionTexture,
+            })
+        )
+        jocondeCaption.position.set(-0.5, 3, 7.5)
+        jocondeCaption.rotation.x = Math.PI
+        jocondeCaption.rotation.z = Math.PI
+        firstFrameworkGroup.add(jocondeCaption)
 
          /**
           * Lights

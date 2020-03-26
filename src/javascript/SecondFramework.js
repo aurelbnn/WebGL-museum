@@ -5,6 +5,7 @@ import enferNormalSource from '../images/enfer/enferPlan.jpg'// Chaudron
 import enferAlphaSource from '../images/enfer/enferAlpha.jpg' // Chaudron Alpha
 import fireNormalSource from '../images/enfer/fire.jpg'// flammes
 import fireAlphaSource from '../images/enfer/fireAlpha.jpg' // flammes Alpha
+import enferCaptionSource from '../images/captions/enfer-caption.jpg'
 
 /**
  * Textures
@@ -18,6 +19,9 @@ const enferAlphaTexture = textureLoader.load(enferAlphaSource)
 //Fire
 const fireNormalTexture = textureLoader.load(fireNormalSource)
 const fireAlphaTexture = textureLoader.load(fireAlphaSource)
+
+//Caption
+const enfeCaptionTexture = textureLoader.load(enferCaptionSource)
 
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
