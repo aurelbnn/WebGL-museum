@@ -1,7 +1,5 @@
 # WebGL Museum
 
-![M.I.I.](mii-presentation.png)
-
 ## Project
 
 This is our Project, a museum on internet.
