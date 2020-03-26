@@ -1,8 +1,8 @@
 import './style/main.styl'
 import * as THREE from 'three'
 import {
-    OrbitControls
-} from 'three/examples/jsm/controls/OrbitControls.js'
+    PointerLockControls
+} from 'three/examples/jsm/controls/PointerLockControls.js'
 import Room from './javascript/Room.js'
 import FirstFramework from './javascript/FirstFramework.js'
 import SecondFramework from './javascript/SecondFramework.js'
@@ -16,7 +16,6 @@ import VitruveSoundSource from './audios/marchetto-cara.mp3'
 import wallpaperColorSource from './images/Wallpaper/WallpaperBasecolor.jpg' // Wall texture
 import wallpaperNormalSource from './images/Wallpaper/WallpaperNormal.jpg' // Wall normal
 import wallpaperAmbientSource from './images/Wallpaper/WallpaperAmbientOcclusion.jpg' // Wall ambient occlusion
-
 
 
 /**
@@ -33,7 +32,8 @@ const cursor = {}
 cursor.x = 0
 cursor.y = 0
 
-window.addEventListener('mousemove', (_event) => {
+window.addEventListener('mousemove', (_event) =>
+{
     cursor.x = _event.clientX / sizes.width - 0.5
     cursor.y = _event.clientY / sizes.height - 0.5
 })
@@ -57,14 +57,20 @@ const klimtFrameworkZone = new KlimtFramework(scene)
 const vitruvianManZone = new VitruvianMan(scene)
 
 /**
- * Camera
- */
+* Camera
+*/
+const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 20)
+camera.lookAt(scene.position)
+camera.position.y = 1.7
 
-const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 40)
-camera.position.x = 11
-camera.position.y = 8
-camera.position.z = -8
+camera.position.z = 8
 scene.add(camera)
+
+// move
+let moveForward = false;
+let moveBackward = false;
+let moveLeft = false;
+let moveRight = false;
 
 /**
  * Audio
@@ -82,7 +88,7 @@ const JocondeSound = new THREE.PositionalAudio(listener)
 const audioLoader = new THREE.AudioLoader()
 audioLoader.load(JocondeSoundSource, function (buffer) {
     JocondeSound.setBuffer(buffer)
-    JocondeSound.setRefDistance(1)
+    JocondeSound.setRefDistance(0.1)
     JocondeSound.play()
 })
 
@@ -130,7 +136,7 @@ const EnferSound = new THREE.PositionalAudio(listener)
 
 audioLoader.load(EnferSoundSource, function (buffer) {
     EnferSound.setBuffer(buffer)
-    EnferSound.setRefDistance(1)
+    EnferSound.setRefDistance(0.1)
     EnferSound.play()
 })
 
@@ -173,12 +179,11 @@ const KlimtSound = new THREE.PositionalAudio(listener)
 
 audioLoader.load(KlimtSoundSource, function (buffer) {
     KlimtSound.setBuffer(buffer)
-    KlimtSound.setRefDistance(1)
+    KlimtSound.setRefDistance(0.1)
     KlimtSound.play()
 })
 
 const KlimtFrameTop = new THREE.BoxGeometry(3, 0.1, 0.1, 0.1)
-const KlimtFrameTopMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
 const KlimtFrameTopMesh = new THREE.Mesh(KlimtFrameTop, frameworkMaterial)
 KlimtFrameTopMesh.position.x = 2.5
 KlimtFrameTopMesh.position.y = 4
@@ -186,7 +191,6 @@ KlimtFrameTopMesh.position.z = 7.9
 KlimtSoundGroup.add(KlimtFrameTopMesh)
 
 const KlimtFrameBottom = new THREE.BoxGeometry(3, 0.1, 0.1, 0.1)
-const KlimtFrameBottomMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
 const KlimtFrameBottomMesh = new THREE.Mesh(KlimtFrameBottom, frameworkMaterial)
 KlimtFrameBottomMesh.position.x = 2.5
 KlimtFrameBottomMesh.position.y = 1
@@ -194,7 +198,6 @@ KlimtFrameBottomMesh.position.z = 7.9
 KlimtSoundGroup.add(KlimtFrameBottomMesh)
 
 const KlimtFrameLeft = new THREE.BoxGeometry(0.1, 3.1, 0.1, 0.1)
-const KlimtFrameLeftMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
 const KlimtFrameLeftMesh = new THREE.Mesh(KlimtFrameLeft, frameworkMaterial)
 KlimtFrameLeftMesh.position.x = 4
 KlimtFrameLeftMesh.position.y = 2.5
@@ -202,7 +205,6 @@ KlimtFrameLeftMesh.position.z = 7.9
 KlimtSoundGroup.add(KlimtFrameLeftMesh)
 
 const KlimtFrameRight = new THREE.BoxGeometry(0.1, 3.1, 0.1, 0.1)
-const KlimtFrameRightMaterial = new THREE.MeshPhongMaterial( { color: 0xffffff } )
 const KlimtFrameRightMesh = new THREE.Mesh(KlimtFrameRight, frameworkMaterial)
 KlimtFrameRightMesh.position.x = 1
 KlimtFrameRightMesh.position.y = 2.5
@@ -238,7 +240,7 @@ const VitruveSound = new THREE.PositionalAudio(listener)
 
 audioLoader.load(VitruveSoundSource, function (buffer) {
     VitruveSound.setBuffer(buffer)
-    VitruveSound.setRefDistance(1)
+    VitruveSound.setRefDistance(0.1)
     VitruveSound.play()
 })
 
@@ -256,7 +258,7 @@ vitruveBase.add(VitruveSound)
  * Lights
  */
 
-const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 0.5)
+const hemisphereLight = new THREE.HemisphereLight(0xff0000, 0x0000ff, 1)
 scene.add(hemisphereLight)
 
 // const ambientLight = new THREE.AmbientLight(0xffffff, 0.3)
@@ -265,6 +267,7 @@ scene.add(hemisphereLight)
 // const directionalLight = new THREE.DirectionalLight(0xffffff, 0.9)
 // directionalLight.position.x = -5
 // directionalLight.position.y = 4
+
 // directionalLight.position.z = -3
 // scene.add(directionalLight)
 
@@ -285,12 +288,62 @@ const renderer = new THREE.WebGLRenderer()
 renderer.setSize(sizes.width, sizes.height)
 renderer.setPixelRatio(window.devicePixelRatio)
 document.body.appendChild(renderer.domElement)
+
+
+
 /**
- * Camera Controls
+ * Controls
  */
-const cameraControls = new OrbitControls(camera, renderer.domElement)
-cameraControls.zoomSpeed = 0.3
-cameraControls.enableDamping = true
+const controls = new PointerLockControls( camera, document.body )
+let prevTime = performance.now()
+let velocity = new THREE.Vector3()
+let clock = new THREE.Clock()
+let direction = new  THREE.Vector3
+controls.unlock()
+scene.add( controls.getObject() )
+
+    /** Controls KeysDown*/
+const onKeyDown =  ( _event ) => {
+    if (_event.code === 'KeyW')
+    {
+        moveForward = true;
+    }
+    if (_event.code === 'KeyS')
+    {
+        moveBackward = true;
+    }
+    if (_event.code === 'KeyA')
+    {
+        moveLeft = true;
+    }
+    if (_event.code === 'KeyD')
+    {
+        moveRight = true;
+    }
+}
+    /** Controls KeyUp*/
+    const onKeyUp = ( _event ) =>{
+    if (_event.code === 'KeyW')
+    {
+        moveForward = false;
+    }
+    if (_event.code === 'KeyS')
+    {
+        moveBackward = false;
+    }
+    if (_event.code === 'KeyA')
+    {
+        moveLeft = false;
+    }
+    if (_event.code === 'KeyD')
+    {
+        moveRight = false;
+    }
+}
+
+document.addEventListener( 'keydown', onKeyDown )
+document.addEventListener( 'keyup', onKeyUp )
+
 
 
 /**
@@ -309,14 +362,51 @@ window.addEventListener('resize', () => {
 /**
  * Loop
  */
-const loop = () => {
+
+const loop = () =>
+{
     window.requestAnimationFrame(loop)
 
-    // Camera controls
-    cameraControls.update()
+    /**
+     *  Get the the performance time to create a velocity
+    */
+    const time = performance.now();
+    const delta = ( time - prevTime ) / 1000;
 
+    velocity.x -= velocity.x * 2 * delta;
+    velocity.z -= velocity.z * 2 * delta;
+
+    /**
+     *   Create a variable to have the axe of direction  exp : if direction x === -1 the locker go left
+    */
+    direction.z = Number( moveForward ) - Number( moveBackward );
+    direction.x = Number( moveRight ) - Number( moveLeft );
+    direction.normalize()
+
+    /**
+     *   Applicate the velocity for direction
+    */
+    if ( moveForward || moveBackward )
+    {
+        velocity.z -= direction.z * 10 * delta;
+    }
+    if ( moveLeft || moveRight )
+    {
+        velocity.x -= direction.x * 10 * delta;
+    }
+
+    /**
+     *  Applicate the controls and velocity together
+    */
+    controls.moveRight( - velocity.x * delta );
+    controls.moveForward( - velocity.z * delta );
+    controls.moveRight( - velocity.x * delta );
+    controls.moveForward( - velocity.z * delta );
+
+    prevTime = time;
+
+    renderer.render( scene, camera );
     // Render
-    renderer.render(scene, camera)
+   
 }
-
 loop()

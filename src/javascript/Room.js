@@ -89,21 +89,7 @@ export default class Room
 
         _scene.add(directionalLight)
 
-        const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight)
-        _scene.add(directionalLightHelper)  
-        // const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.1, 0.7)
-        // spotLight.position.x = 13
-        // spotLight.position.y = 1
-        // spotLight.position.z = 0
-        // _scene.add(spotLight)
-
-        // spotLight.target.position.x = 8
-        // spotLight.target.position.y = 1
-        // spotLight.target.position.z = 0
-        // _scene.add(spotLight.target)
-
-        // const spotLightHelper = new THREE.SpotLightHelper(spotLight)
-        // _scene.add(spotLightHelper)
+      
 
         /**
          * Walls creation for the room / floor and base for vitruvian man

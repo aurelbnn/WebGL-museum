@@ -52,9 +52,9 @@ export default class VitruvianMan{
          * Lights
          */      
         
-        const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.5)
+        const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.3)
         spotLight.position.x = 2.5
-        spotLight.position.y = 4.5
+        spotLight.position.y = 3.5
         spotLight.position.z = -0.5
         vitruvianManGroup.add(spotLight)
 
