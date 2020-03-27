@@ -16,7 +16,7 @@ export default class VitruvianMan{
         gltfLoader.setDRACOLoader(dracoLoader)
 
         gltfLoader.load(
-            '/models/vitruvian/vitruvian.glb',
+            '/models/vitruvian/vitruvian.gltf',
             (_gltf) =>
             {
                 while(_gltf.scene.children.length)
@@ -35,7 +35,7 @@ export default class VitruvianMan{
                         window.requestAnimationFrame(loop)
                     
                         //Vitruvian rotation
-                        child.rotation.z += -0.01
+                        child.rotation.y += -0.01
                     }
 
                     loop()
