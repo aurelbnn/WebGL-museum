@@ -45,7 +45,7 @@ export default class Fire
 
         }
 
-    loop()
+        loop()
     }
 
 }

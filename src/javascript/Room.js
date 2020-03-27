@@ -41,7 +41,7 @@ export default class Room
             aoMap: wallpaperAmbientTexture,
             metalness: 0.4,
             roughness: 0.4,
-            color: 0xb33939,
+            color: 0xD2C895,
         })
         const material = new THREE.MeshStandardMaterial({
             map: woodfloorColorTexture,
@@ -89,21 +89,7 @@ export default class Room
 
         _scene.add(directionalLight)
 
-        const directionalLightHelper = new THREE.DirectionalLightHelper(directionalLight)
-        _scene.add(directionalLightHelper)  
-        // const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.1, 0.7)
-        // spotLight.position.x = 13
-        // spotLight.position.y = 1
-        // spotLight.position.z = 0
-        // _scene.add(spotLight)
-
-        // spotLight.target.position.x = 8
-        // spotLight.target.position.y = 1
-        // spotLight.target.position.z = 0
-        // _scene.add(spotLight.target)
-
-        // const spotLightHelper = new THREE.SpotLightHelper(spotLight)
-        // _scene.add(spotLightHelper)
+      
 
         /**
          * Walls creation for the room / floor and base for vitruvian man
@@ -116,79 +102,79 @@ export default class Room
         museumText.rotation.y = Math.PI * 0.6
         roomGroup.add(museumText)
 
-        const wallFirstMesh = new THREE.Mesh(new THREE.BoxGeometry( 12.1, 3.95, 0.1 ), wallsMaterial)
+        const wallFirstMesh = new THREE.Mesh(new THREE.BoxGeometry( 12.1, 3.95, 0.1 ), darkMaterial)
         wallFirstMesh.position.x = -5
         wallFirstMesh.position.y = 1.975
         wallFirstMesh.position.z = -6
         roomGroup.add(wallFirstMesh)
 
-        const wallSecondMesh = new THREE.Mesh(new THREE.BoxGeometry( 18.1, 3.95, 0.1 ), wallsMaterial)
+        const wallSecondMesh = new THREE.Mesh(new THREE.BoxGeometry( 18.1, 3.95, 0.1 ), darkMaterial)
         wallSecondMesh.position.x = -11
         wallSecondMesh.position.y = 1.975
         wallSecondMesh.position.z = 3
         wallSecondMesh.rotation.y = Math.PI * 0.5
         roomGroup.add(wallSecondMesh)
 
-        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.95, 0.1 ), darkMaterial)
+        const wallThirdMesh = new THREE.Mesh(new THREE.BoxGeometry( 4.9, 3.95, 0.1 ), darkMaterial)
         wallThirdMesh.position.x = -8.5
         wallThirdMesh.position.y = 1.975
         wallThirdMesh.position.z = 12
         roomGroup.add(wallThirdMesh)
 
-        const wallFourthMesh = new THREE.Mesh(new THREE.BoxGeometry( 4.1, 3.95, 0.1 ), wallsMaterial)
+        const wallFourthMesh = new THREE.Mesh(new THREE.BoxGeometry( 4.1, 3.95, 0.1 ), darkMaterial)
         wallFourthMesh.position.x = -6
         wallFourthMesh.position.y = 1.975
         wallFourthMesh.position.z = 10
         wallFourthMesh.rotation.y = Math.PI * -0.5
         roomGroup.add(wallFourthMesh)
 
-        const wallFifthMesh = new THREE.Mesh(new THREE.BoxGeometry( 6, 3.95, 0.1 ), wallsMaterial)
+        const wallFifthMesh = new THREE.Mesh(new THREE.BoxGeometry( 6, 3.95, 0.1 ), darkMaterial)
         wallFifthMesh.position.x = -3
         wallFifthMesh.position.y = 1.975
         wallFifthMesh.position.z = 8
         roomGroup.add(wallFifthMesh)
 
-        const wallSixthMesh = new THREE.Mesh(new THREE.BoxGeometry( 2, 3.95, 0.1 ), wallsMaterial)
+        const wallSixthMesh = new THREE.Mesh(new THREE.BoxGeometry( 2, 3.95, 0.1 ), darkMaterial)
         wallSixthMesh.position.x = 0
         wallSixthMesh.position.y = 1.975
-        wallSixthMesh.position.z = 9
+        wallSixthMesh.position.z = 9.05
         wallSixthMesh.rotation.y = Math.PI * 0.5
         roomGroup.add(wallSixthMesh)
 
-        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 5, 3.95, 0.1 ), darkMaterial)
+        const wallSeventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 4.9, 3.95, 0.1 ), darkMaterial)
         wallSeventhMesh.position.x = 2.5
         wallSeventhMesh.position.y = 1.975
         wallSeventhMesh.position.z = 10
         roomGroup.add(wallSeventhMesh)
 
-        const wallEighthMesh = new THREE.Mesh(new THREE.BoxGeometry( 13.1, 3.95, 0.1 ), wallsMaterial)
+        const wallEighthMesh = new THREE.Mesh(new THREE.BoxGeometry( 13.1, 3.95, 0.1 ), darkMaterial)
         wallEighthMesh.position.x = 5
         wallEighthMesh.position.y = 1.975
         wallEighthMesh.position.z = 3.5
         wallEighthMesh.rotation.y = Math.PI * -0.5
         roomGroup.add(wallEighthMesh)
 
-        const wallNinthMesh = new THREE.Mesh(new THREE.BoxGeometry( 4, 3.95, 0.1 ), wallsMaterial)
+        const wallNinthMesh = new THREE.Mesh(new THREE.BoxGeometry( 4, 3.95, 0.1 ), darkMaterial)
         wallNinthMesh.position.x = 2.95
         wallNinthMesh.position.y = 1.975
         wallNinthMesh.position.z = -3
         roomGroup.add(wallNinthMesh)
 
-        const wallTenthMesh = new THREE.Mesh(new THREE.BoxGeometry( 0.75, 2.75, 0.1 ), wallsMaterial)
+        const wallTenthMesh = new THREE.Mesh(new THREE.BoxGeometry( 0.75, 2.75, 0.1 ), darkMaterial)
         wallTenthMesh.position.x = 1
         wallTenthMesh.position.y = 1.375
         wallTenthMesh.position.z = -3.375
         wallTenthMesh.rotation.y = Math.PI * -0.5
         roomGroup.add(wallTenthMesh)
 
-        const wallEleventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 3, 1.20, 0.1 ), wallsMaterial)
+        const wallEleventhMesh = new THREE.Mesh(new THREE.BoxGeometry( 3, 1.20, 0.1 ), darkMaterial)
         wallEleventhMesh.position.x = 1
         wallEleventhMesh.position.y = 3.35
         wallEleventhMesh.position.z = -4.5
         wallEleventhMesh.rotation.y = Math.PI * -0.5
         roomGroup.add(wallEleventhMesh)
 
-        const wallTwelfthMesh = new THREE.Mesh(new THREE.BoxGeometry( 0.75, 2.75, 0.1 ), wallsMaterial)
+        const wallTwelfthMesh = new THREE.Mesh(new THREE.BoxGeometry( 0.75, 2.75, 0.1 ), darkMaterial)
         wallTwelfthMesh.position.x = 1
         wallTwelfthMesh.position.y = 1.375
         wallTwelfthMesh.position.z = -5.625
@@ -200,14 +186,14 @@ export default class Room
         floor.rotation.x -= Math.PI * 0.5
         roomGroup.add(floor)
 
-        const ceilingOne = new THREE.Mesh(new THREE.BoxGeometry( 16.1, 11.1, 0.1 ), whiteMaterial)
+        const ceilingOne = new THREE.Mesh(new THREE.BoxGeometry( 16.1, 11.1, 0.1 ), darkMaterial)
         ceilingOne.position.y = 4
         ceilingOne.position.x = -3
         ceilingOne.position.z = 2.5
         ceilingOne.rotation.x -= Math.PI * 0.5
         roomGroup.add(ceilingOne)
 
-        const ceilingTwo = new THREE.Mesh(new THREE.BoxGeometry( 12.1, 4.1, 0.1 ), whiteMaterial)
+        const ceilingTwo = new THREE.Mesh(new THREE.BoxGeometry( 12.1, 4.1, 0.1 ), darkMaterial)
         ceilingTwo.position.y = 4
         ceilingTwo.position.x = -5
         ceilingTwo.position.z = -4

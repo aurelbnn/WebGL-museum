@@ -5,6 +5,7 @@ import enferNormalSource from '../images/enfer/enferPlan.jpg'// Chaudron
 import enferAlphaSource from '../images/enfer/enferAlpha.jpg' // Chaudron Alpha
 import fireNormalSource from '../images/enfer/fire.jpg'// flammes
 import fireAlphaSource from '../images/enfer/fireAlpha.jpg' // flammes Alpha
+import enferCaptionSource from '../images/captions/enfer-caption.jpg'
 
 /**
  * Textures
@@ -18,6 +19,9 @@ const enferAlphaTexture = textureLoader.load(enferAlphaSource)
 //Fire
 const fireNormalTexture = textureLoader.load(fireNormalSource)
 const fireAlphaTexture = textureLoader.load(fireAlphaSource)
+
+//Caption
+const enfeCaptionTexture = textureLoader.load(enferCaptionSource)
 
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
@@ -43,34 +47,29 @@ export default class SecondFramework
             color: 0x04072C,
         })
 
-        const whiteMaterial = new THREE.MeshStandardMaterial({
-            map: wallpaperColorTexture,
-            color: 0xffffff,
-        })
-
         /**
          * Box
         */
 
-        const secondFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartOneMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), darkMaterial)
         secondFrameworkWallPartOneMesh.position.x = -10.375
         secondFrameworkWallPartOneMesh.position.y = 2
         secondFrameworkWallPartOneMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartOneMesh)
 
-        const secondFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartTwoMesh = new THREE.Mesh(new THREE.BoxGeometry( 1.25, 4, 0.1 ), darkMaterial)
         secondFrameworkWallPartTwoMesh.position.x = -6.675
         secondFrameworkWallPartTwoMesh.position.y = 2
         secondFrameworkWallPartTwoMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartTwoMesh)
 
-        const secondFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartThreeMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), darkMaterial)
         secondFrameworkWallPartThreeMesh.position.x = -8.5
         secondFrameworkWallPartThreeMesh.position.y = 3.5
         secondFrameworkWallPartThreeMesh.position.z = 8
         secondFrameworkGroup.add(secondFrameworkWallPartThreeMesh)
 
-        const secondFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), wallsMaterial)
+        const secondFrameworkWallPartFourMesh = new THREE.Mesh(new THREE.BoxGeometry( 2.5, 1, 0.1 ), darkMaterial)
         secondFrameworkWallPartFourMesh.position.x = -8.5
         secondFrameworkWallPartFourMesh.position.y = 0.5
         secondFrameworkWallPartFourMesh.position.z = 8
@@ -82,7 +81,7 @@ export default class SecondFramework
         secondFrameworkFloorMesh.position.z = 10
         secondFrameworkGroup.add(secondFrameworkFloorMesh)
 
-        const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), whiteMaterial)
+        const secondFrameworkCeilingMesh = new THREE.Mesh(new THREE.BoxGeometry( 5.1, 0.1, 4.1 ), darkMaterial)
         secondFrameworkCeilingMesh.position.x = -8.5
         secondFrameworkCeilingMesh.position.y = 4
         secondFrameworkCeilingMesh.position.z = 10.

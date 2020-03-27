@@ -44,7 +44,7 @@ export default class KlimtFramework
         */
         const spotLight = new THREE.SpotLight(0xe39d52, 1, 0, Math.PI * -0.2, 0.5)
         spotLight.position.x = -11
-        spotLight.position.y = 4.5
+        spotLight.position.y = 4
         spotLight.position.z = 1
         klimtFrameworkGroup.add(spotLight)
 
