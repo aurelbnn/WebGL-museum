@@ -21,7 +21,7 @@ const fireNormalTexture = textureLoader.load(fireNormalSource)
 const fireAlphaTexture = textureLoader.load(fireAlphaSource)
 
 //Caption
-const enfeCaptionTexture = textureLoader.load(enferCaptionSource)
+const enferCaptionTexture = textureLoader.load(enferCaptionSource)
 
 //Walls
 const wallpaperColorTexture = textureLoader.load(wallpaperColorSource)
@@ -122,7 +122,24 @@ export default class SecondFramework
         enferSecondPlan.rotation.x = Math.PI
         enferSecondPlan.rotation.z = Math.PI
         secondFrameworkGroup.add(enferSecondPlan)
+        
+        /**
+         * Captions
+         */
 
+        const enferCaption = new THREE.Mesh(
+            new THREE.PlaneGeometry(2, 2, 1, 1),
+            new THREE.MeshBasicMaterial({ 
+                map: enferCaptionTexture,
+            })
+        )
+        enferCaption.position.set(-10.9, 2, 6)
+        enferCaption.rotation.x = Math.PI 
+        enferCaption.rotation.y = Math.PI / 2
+        enferCaption.rotation.z = Math.PI 
+        secondFrameworkGroup.add(enferCaption)
+
+         
         /**
          * Lights
          */

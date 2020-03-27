@@ -1,5 +1,7 @@
 import * as THREE from 'three'
 import klimtNormalSource from '../images/klimt/leBaiserKlimt.jpg'// Klimt
+import klimtCaptionSource from '../images/captions/klimt-caption.jpg'
+import vitruvianCaptionSource from '../images/captions/vitruvian-caption.jpg'
 
 
 /**
@@ -8,6 +10,11 @@ import klimtNormalSource from '../images/klimt/leBaiserKlimt.jpg'// Klimt
 const textureLoader = new THREE.TextureLoader()
 
 const klimtNormalTexture = textureLoader.load(klimtNormalSource)
+const vitruvianCaptionTexture = textureLoader.load(vitruvianCaptionSource)
+
+
+//Caption
+const klimtCaptionTexture = textureLoader.load(klimtCaptionSource)
 
 export default class KlimtFramework
 {
@@ -38,6 +45,38 @@ export default class KlimtFramework
 
 
         klimtFrameworkGroup.add(klimtImage)
+
+        /**
+         * Captions
+         */
+
+        const klimtCaption = new THREE.Mesh(
+            new THREE.PlaneGeometry(2, 2, 1, 1),
+            new THREE.MeshBasicMaterial({ 
+                map: klimtCaptionTexture,
+            })
+        )
+        klimtCaption.position.set(-10.9, 2, -2) 
+        klimtCaption.rotation.x = Math.PI 
+        klimtCaption.rotation.y = Math.PI / 2
+        klimtCaption.rotation.z = Math.PI 
+        klimtFrameworkGroup.add(klimtCaption)
+
+        //Vitruve Caption 
+        const vitruvianCaption = new THREE.Mesh(
+            new THREE.PlaneGeometry(2, 2, 1, 1),
+            new THREE.MeshBasicMaterial({ 
+                map: vitruvianCaptionTexture,
+                side: THREE.DoubleSide
+            })
+        )
+        vitruvianCaption.position.x = 4
+        vitruvianCaption.position.y = 2
+        vitruvianCaption.position.z = 1
+        vitruvianCaption.rotation.x = Math.PI 
+        vitruvianCaption.rotation.y = -Math.PI / 2
+        vitruvianCaption.rotation.z = Math.PI 
+        klimtFrameworkGroup.add(vitruvianCaption)
 
         /**
         * Lights

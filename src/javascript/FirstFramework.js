@@ -127,7 +127,7 @@ export default class FirstFramework {
                 map: jocondeCaptionTexture,
             })
         )
-        jocondeCaption.position.set(-0.5, 3, 7.5)
+        jocondeCaption.position.set(-0.5, 2, 7.5)
         jocondeCaption.rotation.x = Math.PI
         jocondeCaption.rotation.z = Math.PI
         firstFrameworkGroup.add(jocondeCaption)
